@@ -7,24 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using negocio;
+using dominio;
 
 namespace TPWinForm_Jannello_Vaca
 {
     public partial class AppForm : Form
     {
+        ArticuloNegocio negocio = new ArticuloNegocio();
+
         public AppForm()
         {
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void AppForm_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            dgvTabla.DataSource = negocio.listar("");
         }
     }
 }
