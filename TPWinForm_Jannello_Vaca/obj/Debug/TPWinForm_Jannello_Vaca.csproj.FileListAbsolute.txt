@@ -14,3 +14,19 @@ C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca
 C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\obj\Debug\TPWinForm_Jannello_Vaca.csproj.CopyComplete
 C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\obj\Debug\TPWinForm_Jannello_Vaca.exe
 C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\obj\Debug\TPWinForm_Jannello_Vaca.pdb
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\bin\Debug\TPWinForm_Jannello_Vaca.exe.config
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\bin\Debug\TPWinForm_Jannello_Vaca.exe
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\bin\Debug\TPWinForm_Jannello_Vaca.pdb
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\bin\Debug\dominio.dll
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\bin\Debug\negocio.dll
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\bin\Debug\System.Data.SqlClient.dll
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\bin\Debug\dominio.pdb
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\bin\Debug\negocio.pdb
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\bin\Debug\System.Data.SqlClient.xml
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\obj\Debug\TPWinForm_Jannello_Vaca.csproj.AssemblyReference.cache
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\obj\Debug\TPWinForm_Jannello_Vaca.Properties.Resources.resources
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\obj\Debug\TPWinForm_Jannello_Vaca.csproj.GenerateResource.cache
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\obj\Debug\TPWinForm_Jannello_Vaca.csproj.CoreCompileInputs.cache
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\obj\Debug\TPWinForm_Jannello_Vaca.csproj.CopyComplete
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\obj\Debug\TPWinForm_Jannello_Vaca.exe
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\obj\Debug\TPWinForm_Jannello_Vaca.pdb

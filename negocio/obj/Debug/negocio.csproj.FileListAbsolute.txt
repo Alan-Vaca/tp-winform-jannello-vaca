@@ -9,3 +9,14 @@ C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\negocio\obj\Debug\negoc
 C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\negocio\obj\Debug\negocio.csproj.CopyComplete
 C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\negocio\obj\Debug\negocio.dll
 C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\negocio\obj\Debug\negocio.pdb
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\negocio\bin\Debug\negocio.dll
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\negocio\bin\Debug\negocio.pdb
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\negocio\bin\Debug\dominio.dll
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\negocio\bin\Debug\System.Data.SqlClient.dll
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\negocio\bin\Debug\dominio.pdb
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\negocio\bin\Debug\System.Data.SqlClient.xml
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\negocio\obj\Debug\negocio.csproj.CopyComplete
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\negocio\obj\Debug\negocio.dll
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\negocio\obj\Debug\negocio.pdb
