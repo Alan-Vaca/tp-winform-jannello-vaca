@@ -1,0 +1,9 @@
+C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\dominio\bin\Debug\dominio.dll
+C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\dominio\bin\Debug\dominio.pdb
+C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\dominio\bin\Debug\System.Data.SqlClient.dll
+C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\dominio\bin\Debug\System.Data.SqlClient.xml
+C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\dominio\obj\Debug\dominio.csproj.CopyComplete
+C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\dominio\obj\Debug\dominio.dll
+C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\dominio\obj\Debug\dominio.pdb
