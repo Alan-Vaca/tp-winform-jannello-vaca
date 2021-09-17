@@ -22,13 +22,20 @@ namespace negocio
                 while (AccesoDatos.Lector.Read())
                 {
                     Articulo articulo = new Articulo();
-                    articulo.CodigoArticulo = (string)AccesoDatos.Lector["Codigo"];
-                    articulo.Nombre = (string)AccesoDatos.Lector["Nombre"];
-                    articulo.Descripcion = (string)AccesoDatos.Lector["Descripcion"];
-                    articulo.URLimagen = (string)AccesoDatos.Lector["ImagenUrl"];
-                    articulo.Precio = (decimal)AccesoDatos.Lector["Precio"];
-                    articulo.Marca = new Marca((int)AccesoDatos.Lector["IdMarca"], (string)AccesoDatos.Lector["Marca"]);
-                    articulo.Categoria = new Categoria((int)AccesoDatos.Lector["IdCategoria"], (string)AccesoDatos.Lector["Categoria"]);
+                    if (!(AccesoDatos.Lector["Codigo"] is DBNull))    
+                        articulo.CodigoArticulo = (string)AccesoDatos.Lector["Codigo"];
+                    if (!(AccesoDatos.Lector["Nombre"] is DBNull))
+                        articulo.Nombre = (string)AccesoDatos.Lector["Nombre"];
+                    if (!(AccesoDatos.Lector["Descripcion"] is DBNull))
+                        articulo.Descripcion = (string)AccesoDatos.Lector["Descripcion"];
+                    if (!(AccesoDatos.Lector["ImagenUrl"] is DBNull))
+                        articulo.URLimagen = (string)AccesoDatos.Lector["ImagenUrl"];
+                    if (!(AccesoDatos.Lector["Precio"] is DBNull))
+                        articulo.Precio = (decimal)AccesoDatos.Lector["Precio"];
+                    if (!(AccesoDatos.Lector["IdMarca"] is DBNull) && !(AccesoDatos.Lector["Marca"] is DBNull))
+                        articulo.Marca = new Marca((int)AccesoDatos.Lector["IdMarca"], (string)AccesoDatos.Lector["Marca"]);
+                    if (!(AccesoDatos.Lector["IdCategoria"] is DBNull) && !(AccesoDatos.Lector["Categoria"] is DBNull))
+                        articulo.Categoria = new Categoria((int)AccesoDatos.Lector["IdCategoria"], (string)AccesoDatos.Lector["Categoria"]);
                     // Agrego en los constructores las descripciones, así nos ahorramos el foreach de getDescripciones
                     lista.Add(articulo);
                 }
