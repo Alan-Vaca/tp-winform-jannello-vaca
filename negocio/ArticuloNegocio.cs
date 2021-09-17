@@ -77,7 +77,25 @@ namespace negocio
             string consulta = "Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio)values(" +
                 $"'{art.CodigoArticulo}', '{art.Nombre}', '{art.Descripcion}', {art.Marca.Id}, {art.Categoria.Id}, '{art.URLimagen}', {art.Precio})";
             // Puse string template para hacerlo más prolijo
-            Console.WriteLine(consulta);
+            
+            try
+            {
+               AccesoDatos.setearConsulta(consulta);
+               AccesoDatos.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool existeEnLaDb(string codigo)
+        {
+            List<Articulo> articulos = this.listar($"Where Codigo='{codigo}'");
+            return articulos.Count >= 1;
+        }
+        public void eliminar(string codigo)
+        {
+            string consulta = $"Delete from ARTICULOS where Codigo='{codigo}'";
             try
             {
                 AccesoDatos.setearConsulta(consulta);

@@ -31,5 +31,11 @@ namespace TPWinForm_Jannello_Vaca
             formAgregar form = new formAgregar();
             form.ShowDialog();
         }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            eliminarForm form = new eliminarForm();
+            form.ShowDialog();
+        }
     }
 }

@@ -85,7 +85,7 @@ namespace TPWinForm_Jannello_Vaca
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(135, 35);
             this.buttonAgregar.TabIndex = 6;
-            this.buttonAgregar.Text = "Agregar";
+            this.buttonAgregar.Text = "Agregar artículo";
             this.buttonAgregar.UseVisualStyleBackColor = false;
             this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
             // 
@@ -102,8 +102,9 @@ namespace TPWinForm_Jannello_Vaca
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(135, 35);
             this.BtnEliminar.TabIndex = 5;
-            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.Text = "Eliminar artículo";
             this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnSesion
             // 

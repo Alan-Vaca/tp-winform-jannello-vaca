@@ -55,6 +55,12 @@
     <Compile Include="AppForm.Designer.cs">
       <DependentUpon>AppForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="eliminarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eliminarForm.Designer.cs">
+      <DependentUpon>eliminarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="formAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AppForm.resx">
       <DependentUpon>AppForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eliminarForm.resx">
+      <DependentUpon>eliminarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formAgregar.resx">
       <DependentUpon>formAgregar.cs</DependentUpon>

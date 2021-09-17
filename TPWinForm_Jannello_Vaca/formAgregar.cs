@@ -47,9 +47,15 @@ namespace TPWinForm_Jannello_Vaca
                 art.URLimagen = textBoxImagen.Text;
                 art.Descripcion = textBoxDescripcion.Text;
                 art.CodigoArticulo = textBoxCodigo.Text;
-
-                artNegocio.agregar(art);
-                MessageBox.Show("¡Agregado con éxito!");
+                if (!artNegocio.existeEnLaDb(art.CodigoArticulo))
+                {
+                    artNegocio.agregar(art);
+                    MessageBox.Show("¡Agregado con éxito!");
+                }
+                else
+                {
+                    MessageBox.Show("Error! Ya existe un artículo con ese código en la DB");
+                }
                 Close();
             }
             catch (Exception ex)
