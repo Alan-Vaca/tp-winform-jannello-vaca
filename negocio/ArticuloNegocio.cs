@@ -15,7 +15,10 @@ namespace negocio
             List<Articulo> lista = new List<Articulo>();
             try
             {
-                string consulta = "Select Codigo, IdCategoria, IdMarca, A.Descripcion Descripcion, Precio, Nombre, ImagenUrl, M.Descripcion Marca, C.Descripcion Categoria From ARTICULOS A, MARCAS M, CATEGORIAS C " + where;
+                string consulta = "Select  A.Id,A.Codigo,A.Nombre,A.Descripcion,M.Descripcion 'Marca',C.Descripcion 'Categoria'," +
+                                    "A.ImagenUrl,A.Precio, A.IdMarca, A.IdCategoria from Articulos A " +
+                                    "inner join Marcas M on M.Id=A.IdMarca " +
+                                    "inner join Categorias C on C.Id=A.IdCategoria " + where;
                 // Agregué a la consulta para que traiga las descripciones de las marcas y de las categorías 
                 AccesoDatos.setearConsulta(consulta);
                 AccesoDatos.ejecutarLectura();
@@ -32,9 +35,9 @@ namespace negocio
                         articulo.URLimagen = (string)AccesoDatos.Lector["ImagenUrl"];
                     if (!(AccesoDatos.Lector["Precio"] is DBNull))
                         articulo.Precio = (decimal)AccesoDatos.Lector["Precio"];
-                    if (!(AccesoDatos.Lector["IdMarca"] is DBNull) && !(AccesoDatos.Lector["Marca"] is DBNull))
+                    if (!(AccesoDatos.Lector["Marca"] is DBNull))
                         articulo.Marca = new Marca((int)AccesoDatos.Lector["IdMarca"], (string)AccesoDatos.Lector["Marca"]);
-                    if (!(AccesoDatos.Lector["IdCategoria"] is DBNull) && !(AccesoDatos.Lector["Categoria"] is DBNull))
+                    if (!(AccesoDatos.Lector["Categoria"] is DBNull))
                         articulo.Categoria = new Categoria((int)AccesoDatos.Lector["IdCategoria"], (string)AccesoDatos.Lector["Categoria"]);
                     // Agrego en los constructores las descripciones, así nos ahorramos el foreach de getDescripciones
                     lista.Add(articulo);

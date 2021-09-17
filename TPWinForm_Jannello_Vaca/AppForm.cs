@@ -24,6 +24,17 @@ namespace TPWinForm_Jannello_Vaca
         private void AppForm_Load(object sender, EventArgs e)
         {
             reLoadTable();
+            cbOrdernarPor.Items.Clear();
+            cbOrdernarPor.Items.Add("Categoria");
+            cbOrdernarPor.Items.Add("Codigo de articulo");
+            cbOrdernarPor.Items.Add("Descripcion");
+            cbOrdernarPor.Items.Add("Mas antiguo");
+            cbOrdernarPor.Items.Add("Mas reciente");
+            cbOrdernarPor.Items.Add("Marca");
+            cbOrdernarPor.Items.Add("Nombre");
+            cbOrdernarPor.Items.Add("Precio ascendente");
+            cbOrdernarPor.Items.Add("Precio descendente");
+
         }
 
         private void buttonAgregar_Click(object sender, EventArgs e)
@@ -42,12 +53,46 @@ namespace TPWinForm_Jannello_Vaca
 
         private void reLoadTable()
         {
-            dgvTabla.DataSource = negocio.listar("Where A.IdMarca = M.Id and A.IdCategoria = C.Id");
+            cbOrdernarPor.Text = "Categoria";
+            dgvTabla.DataSource = negocio.listar(" order by C.Id asc");
+
         }
 
         private void BtnSesion_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void cbOrdernarPor_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            string opAux = cbOrdernarPor.Text;
+            switch (opAux)
+            {
+                case "Categoria":
+                    dgvTabla.DataSource = negocio.listar(" order by C.Id asc");
+                    break;
+                case "Codigo de articulo":
+                    dgvTabla.DataSource = negocio.listar(" order by A.Id asc");
+                    break;
+                case "Descripcion":
+                    dgvTabla.DataSource = negocio.listar(" order by A.Descripcion asc");
+                    break;
+                case "Mas antiguo":
+                    dgvTabla.DataSource = negocio.listar(" order by A.Id asc");
+                    break;
+                case "Mas reciente":
+                    dgvTabla.DataSource = negocio.listar(" order by A.Id desc");
+                    break;
+                case "Marca":
+                    dgvTabla.DataSource = negocio.listar(" order by M.Id asc");
+                    break;
+                case "Precio ascendente":
+                    dgvTabla.DataSource = negocio.listar(" order by A.Precio asc");
+                    break;
+                case "Precio descendente":
+                    dgvTabla.DataSource = negocio.listar(" order by A.Precio desc");
+                    break;
+            }
         }
     }
 }
