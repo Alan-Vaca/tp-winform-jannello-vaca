@@ -15,7 +15,6 @@ namespace negocio
             List<Articulo> lista = new List<Articulo>();
             try
             {
-                AccesoDatos.cerrarConexion();
                 string consulta = "Select A.Id Id, Codigo, IdCategoria, IdMarca, A.Descripcion Descripcion, Precio, Nombre, ImagenUrl, M.Descripcion Marca, C.Descripcion Categoria From ARTICULOS A, MARCAS M, CATEGORIAS C " + where;
 
                 AccesoDatos.setearConsulta(consulta);
@@ -28,7 +27,7 @@ namespace negocio
                     articulo.Nombre = (string)AccesoDatos.Lector["Nombre"];
                     articulo.Descripcion = (string)AccesoDatos.Lector["Descripcion"];
                     articulo.URLimagen = (string)AccesoDatos.Lector["ImagenUrl"];
-                    articulo.precio = (decimal)AccesoDatos.Lector["Precio"];
+                    articulo.Precio = (decimal)AccesoDatos.Lector["Precio"];
                     articulo.Marca = new Marca((int)AccesoDatos.Lector["IdMarca"], (string)AccesoDatos.Lector["Marca"]);
                     articulo.Categoria = new Categoria((int)AccesoDatos.Lector["IdCategoria"], (string)AccesoDatos.Lector["Categoria"]);
                     // Agrego en los constructores las descripciones, así nos ahorramos el foreach de getDescripciones
@@ -71,6 +70,23 @@ namespace negocio
                 auxDescripcion = (string)AccesoDatos.Lector["Descripcion"];
             AccesoDatos.cerrarConexion();
             return auxDescripcion;
+        }
+
+        public void agregar(Articulo art)
+        {
+            string consulta = "Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio)values(" +
+                $"'{art.CodigoArticulo}', '{art.Nombre}', '{art.Descripcion}', {art.Marca.Id}, {art.Categoria.Id}, '{art.URLimagen}', {art.Precio})";
+            // Puse string template para hacerlo más prolijo
+            Console.WriteLine(consulta);
+            try
+            {
+                AccesoDatos.setearConsulta(consulta);
+                AccesoDatos.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

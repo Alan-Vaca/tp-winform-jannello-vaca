@@ -28,5 +28,34 @@ namespace TPWinForm_Jannello_Vaca
             comboBoxCategorias.DataSource = categorias;
             comboBoxMarca.DataSource = marcas;
         }
+
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void agregarBtn_Click(object sender, EventArgs e)
+        {
+            Articulo art = new Articulo();
+            ArticuloNegocio artNegocio = new ArticuloNegocio();
+            try
+            {
+                art.Marca = (Marca)comboBoxMarca.SelectedItem;
+                art.Nombre = textBoxNombre.Text;
+                art.Precio = numericUpDownPrecio.Value;
+                art.Categoria = (Categoria)comboBoxCategorias.SelectedItem;
+                art.URLimagen = textBoxImagen.Text;
+                art.Descripcion = textBoxDescripcion.Text;
+                art.CodigoArticulo = textBoxCodigo.Text;
+
+                artNegocio.agregar(art);
+                MessageBox.Show("¡Agregado con éxito!");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("¡Error! " + ex.ToString());
+            }
+        }
     }
 }

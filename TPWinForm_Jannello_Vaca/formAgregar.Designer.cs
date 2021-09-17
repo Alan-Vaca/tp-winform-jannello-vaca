@@ -39,13 +39,14 @@ namespace TPWinForm_Jannello_Vaca
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.textBoxCodigo = new System.Windows.Forms.TextBox();
             this.textBoxImagen = new System.Windows.Forms.TextBox();
-            this.textBoxPrecio = new System.Windows.Forms.TextBox();
             this.labelDescripcion = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxDescripcion = new System.Windows.Forms.TextBox();
             this.labelMarca = new System.Windows.Forms.Label();
             this.labelCategoria = new System.Windows.Forms.Label();
             this.comboBoxMarca = new System.Windows.Forms.ComboBox();
             this.comboBoxCategorias = new System.Windows.Forms.ComboBox();
+            this.numericUpDownPrecio = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecio)).BeginInit();
             this.SuspendLayout();
             // 
             // agregarBtn
@@ -56,6 +57,7 @@ namespace TPWinForm_Jannello_Vaca
             this.agregarBtn.TabIndex = 0;
             this.agregarBtn.Text = "Agregar";
             this.agregarBtn.UseVisualStyleBackColor = true;
+            this.agregarBtn.Click += new System.EventHandler(this.agregarBtn_Click);
             // 
             // CancelarBtn
             // 
@@ -65,6 +67,7 @@ namespace TPWinForm_Jannello_Vaca
             this.CancelarBtn.TabIndex = 1;
             this.CancelarBtn.Text = "Cancelar";
             this.CancelarBtn.UseVisualStyleBackColor = true;
+            this.CancelarBtn.Click += new System.EventHandler(this.CancelarBtn_Click);
             // 
             // labelNombre
             // 
@@ -123,13 +126,6 @@ namespace TPWinForm_Jannello_Vaca
             this.textBoxImagen.Size = new System.Drawing.Size(162, 20);
             this.textBoxImagen.TabIndex = 8;
             // 
-            // textBoxPrecio
-            // 
-            this.textBoxPrecio.Location = new System.Drawing.Point(112, 117);
-            this.textBoxPrecio.Name = "textBoxPrecio";
-            this.textBoxPrecio.Size = new System.Drawing.Size(68, 20);
-            this.textBoxPrecio.TabIndex = 9;
-            // 
             // labelDescripcion
             // 
             this.labelDescripcion.AutoSize = true;
@@ -139,13 +135,13 @@ namespace TPWinForm_Jannello_Vaca
             this.labelDescripcion.TabIndex = 10;
             this.labelDescripcion.Text = "Descripción";
             // 
-            // textBox1
+            // textBoxDescripcion
             // 
-            this.textBox1.Location = new System.Drawing.Point(40, 171);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(378, 79);
-            this.textBox1.TabIndex = 11;
+            this.textBoxDescripcion.Location = new System.Drawing.Point(40, 171);
+            this.textBoxDescripcion.Multiline = true;
+            this.textBoxDescripcion.Name = "textBoxDescripcion";
+            this.textBoxDescripcion.Size = new System.Drawing.Size(378, 79);
+            this.textBoxDescripcion.TabIndex = 11;
             // 
             // labelMarca
             // 
@@ -181,18 +177,35 @@ namespace TPWinForm_Jannello_Vaca
             this.comboBoxCategorias.Size = new System.Drawing.Size(96, 21);
             this.comboBoxCategorias.TabIndex = 15;
             // 
+            // numericUpDownPrecio
+            // 
+            this.numericUpDownPrecio.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.numericUpDownPrecio.Location = new System.Drawing.Point(112, 120);
+            this.numericUpDownPrecio.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericUpDownPrecio.Name = "numericUpDownPrecio";
+            this.numericUpDownPrecio.Size = new System.Drawing.Size(75, 20);
+            this.numericUpDownPrecio.TabIndex = 16;
+            // 
             // formAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(462, 317);
+            this.Controls.Add(this.numericUpDownPrecio);
             this.Controls.Add(this.comboBoxCategorias);
             this.Controls.Add(this.comboBoxMarca);
             this.Controls.Add(this.labelCategoria);
             this.Controls.Add(this.labelMarca);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxDescripcion);
             this.Controls.Add(this.labelDescripcion);
-            this.Controls.Add(this.textBoxPrecio);
             this.Controls.Add(this.textBoxImagen);
             this.Controls.Add(this.textBoxCodigo);
             this.Controls.Add(this.textBoxNombre);
@@ -206,6 +219,7 @@ namespace TPWinForm_Jannello_Vaca
             this.Name = "formAgregar";
             this.Text = "Agregar un artículo";
             this.Load += new System.EventHandler(this.formAgregar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,12 +236,12 @@ namespace TPWinForm_Jannello_Vaca
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.TextBox textBoxCodigo;
         private System.Windows.Forms.TextBox textBoxImagen;
-        private System.Windows.Forms.TextBox textBoxPrecio;
         private System.Windows.Forms.Label labelDescripcion;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxDescripcion;
         private System.Windows.Forms.Label labelMarca;
         private System.Windows.Forms.Label labelCategoria;
         private System.Windows.Forms.ComboBox comboBoxMarca;
         private System.Windows.Forms.ComboBox comboBoxCategorias;
+        private System.Windows.Forms.NumericUpDown numericUpDownPrecio;
     }
 }
