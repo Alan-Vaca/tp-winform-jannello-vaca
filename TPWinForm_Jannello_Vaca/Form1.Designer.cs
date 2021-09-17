@@ -287,7 +287,6 @@ namespace TPWinForm_Jannello_Vaca
             this.columnaRangoPrecio.Size = new System.Drawing.Size(116, 22);
             this.columnaRangoPrecio.TabIndex = 17;
             this.columnaRangoPrecio.Text = "Rango precio";
-            this.columnaRangoPrecio.Click += new System.EventHandler(this.label3_Click);
             // 
             // AppForm
             // 

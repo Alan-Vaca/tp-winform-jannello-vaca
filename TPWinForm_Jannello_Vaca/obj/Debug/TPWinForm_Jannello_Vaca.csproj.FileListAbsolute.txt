@@ -32,3 +32,4 @@ C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-janne
 C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\obj\Debug\TPWinForm_Jannello_Vaca.pdb
 C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\obj\Debug\TPWinForm_Jannello_Vaca.AppForm.resources
 C:\Users\avaca\Documents\GitHub\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\obj\Debug\TPWinForm_Jannello_Vaca.AppForm.resources
+C:\Users\Facundo\Desktop\Estudio\UTN\Programacion III\TP GRUPAL\tp-winform-jannello-vaca\TPWinForm_Jannello_Vaca\obj\Debug\TPWinForm_Jannello_Vaca.formAgregar.resources

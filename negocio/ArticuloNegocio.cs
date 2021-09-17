@@ -64,10 +64,8 @@ namespace negocio
             AccesoDatos.setearConsulta(consulta);
 
             AccesoDatos.ejecutarLectura();
-            while (AccesoDatos.Lector.Read())
-            {
+            if (AccesoDatos.Lector.Read()) // El Id es único, no hace falta ejecutar un while
                 auxDescripcion = (string)AccesoDatos.Lector["Descripcion"];
-            }
             AccesoDatos.cerrarConexion();
             return auxDescripcion;
         }
@@ -79,10 +77,8 @@ namespace negocio
             AccesoDatos.setearConsulta(consulta);
 
             AccesoDatos.ejecutarLectura();
-            while (AccesoDatos.Lector.Read())
-            {
+            if (AccesoDatos.Lector.Read()) // El Id es único, no hace falta ejecutar un while
                 auxDescripcion = (string)AccesoDatos.Lector["Descripcion"];
-            }
             AccesoDatos.cerrarConexion();
             return auxDescripcion;
         }
