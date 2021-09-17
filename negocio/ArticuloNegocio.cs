@@ -15,14 +15,13 @@ namespace negocio
             List<Articulo> lista = new List<Articulo>();
             try
             {
-                string consulta = "Select A.Id Id, Codigo, IdCategoria, IdMarca, A.Descripcion Descripcion, Precio, Nombre, ImagenUrl, M.Descripcion Marca, C.Descripcion Categoria From ARTICULOS A, MARCAS M, CATEGORIAS C " + where;
+                string consulta = "Select Codigo, IdCategoria, IdMarca, A.Descripcion Descripcion, Precio, Nombre, ImagenUrl, M.Descripcion Marca, C.Descripcion Categoria From ARTICULOS A, MARCAS M, CATEGORIAS C " + where;
 
                 AccesoDatos.setearConsulta(consulta);
                 AccesoDatos.ejecutarLectura();
                 while (AccesoDatos.Lector.Read())
                 {
                     Articulo articulo = new Articulo();
-                    articulo.ID = (int)AccesoDatos.Lector["Id"];
                     articulo.CodigoArticulo = (string)AccesoDatos.Lector["Codigo"];
                     articulo.Nombre = (string)AccesoDatos.Lector["Nombre"];
                     articulo.Descripcion = (string)AccesoDatos.Lector["Descripcion"];

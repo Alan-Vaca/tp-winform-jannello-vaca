@@ -163,6 +163,7 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // comboBoxMarca
             // 
+            this.comboBoxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMarca.FormattingEnabled = true;
             this.comboBoxMarca.Location = new System.Drawing.Point(354, 37);
             this.comboBoxMarca.Name = "comboBoxMarca";
@@ -171,6 +172,7 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // comboBoxCategorias
             // 
+            this.comboBoxCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategorias.FormattingEnabled = true;
             this.comboBoxCategorias.Location = new System.Drawing.Point(354, 89);
             this.comboBoxCategorias.Name = "comboBoxCategorias";
