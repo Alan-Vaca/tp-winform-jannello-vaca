@@ -45,5 +45,9 @@ namespace TPWinForm_Jannello_Vaca
             dgvTabla.DataSource = negocio.listar("Where A.IdMarca = M.Id and A.IdCategoria = C.Id");
         }
 
+        private void BtnSesion_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

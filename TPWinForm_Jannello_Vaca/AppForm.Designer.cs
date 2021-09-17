@@ -34,7 +34,6 @@ namespace TPWinForm_Jannello_Vaca
             this.buttonAgregar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnSesion = new System.Windows.Forms.Button();
-            this.BtnConfiguracion = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.logoImg = new System.Windows.Forms.PictureBox();
             this.dgvTabla = new System.Windows.Forms.DataGridView();
@@ -61,7 +60,6 @@ namespace TPWinForm_Jannello_Vaca
             this.PanelMenu.Controls.Add(this.buttonAgregar);
             this.PanelMenu.Controls.Add(this.BtnEliminar);
             this.PanelMenu.Controls.Add(this.BtnSesion);
-            this.PanelMenu.Controls.Add(this.BtnConfiguracion);
             this.PanelMenu.Controls.Add(this.BtnModificar);
             this.PanelMenu.Controls.Add(this.logoImg);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -72,16 +70,15 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // buttonAgregar
             // 
-            this.buttonAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.buttonAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAgregar.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAgregar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAgregar.Location = new System.Drawing.Point(2, 153);
+            this.buttonAgregar.Location = new System.Drawing.Point(1, 153);
             this.buttonAgregar.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(135, 35);
+            this.buttonAgregar.Size = new System.Drawing.Size(136, 35);
             this.buttonAgregar.TabIndex = 6;
             this.buttonAgregar.Text = "Agregar artículo";
             this.buttonAgregar.UseVisualStyleBackColor = false;
@@ -89,16 +86,15 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEliminar.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnEliminar.Location = new System.Drawing.Point(1, 223);
+            this.BtnEliminar.Location = new System.Drawing.Point(0, 223);
             this.BtnEliminar.Margin = new System.Windows.Forms.Padding(0);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(135, 35);
+            this.BtnEliminar.Size = new System.Drawing.Size(137, 35);
             this.BtnEliminar.TabIndex = 5;
             this.BtnEliminar.Text = "Eliminar artículo";
             this.BtnEliminar.UseVisualStyleBackColor = false;
@@ -106,42 +102,26 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // BtnSesion
             // 
-            this.BtnSesion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnSesion.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BtnSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnSesion.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.BtnSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSesion.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnSesion.Location = new System.Drawing.Point(1, 365);
+            this.BtnSesion.Location = new System.Drawing.Point(1, 372);
             this.BtnSesion.Margin = new System.Windows.Forms.Padding(0);
             this.BtnSesion.Name = "BtnSesion";
             this.BtnSesion.Size = new System.Drawing.Size(135, 35);
             this.BtnSesion.TabIndex = 4;
-            this.BtnSesion.Text = "Cerrar sesión";
+            this.BtnSesion.Text = "Cerrar";
             this.BtnSesion.UseVisualStyleBackColor = false;
-            // 
-            // BtnConfiguracion
-            // 
-            this.BtnConfiguracion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnConfiguracion.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnConfiguracion.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.BtnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnConfiguracion.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnConfiguracion.Location = new System.Drawing.Point(1, 330);
-            this.BtnConfiguracion.Margin = new System.Windows.Forms.Padding(0);
-            this.BtnConfiguracion.Name = "BtnConfiguracion";
-            this.BtnConfiguracion.Size = new System.Drawing.Size(135, 35);
-            this.BtnConfiguracion.TabIndex = 3;
-            this.BtnConfiguracion.Text = "Configuración";
-            this.BtnConfiguracion.UseVisualStyleBackColor = false;
+            this.BtnSesion.Click += new System.EventHandler(this.BtnSesion_Click);
             // 
             // BtnModificar
             // 
-            this.BtnModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BtnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnModificar.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BtnModificar.FlatAppearance.BorderSize = 0;
             this.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnModificar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BtnModificar.Location = new System.Drawing.Point(2, 188);
@@ -154,11 +134,12 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // logoImg
             // 
+            this.logoImg.Dock = System.Windows.Forms.DockStyle.Top;
             this.logoImg.Image = ((System.Drawing.Image)(resources.GetObject("logoImg.Image")));
             this.logoImg.InitialImage = ((System.Drawing.Image)(resources.GetObject("logoImg.InitialImage")));
             this.logoImg.Location = new System.Drawing.Point(0, 0);
             this.logoImg.Name = "logoImg";
-            this.logoImg.Size = new System.Drawing.Size(137, 123);
+            this.logoImg.Size = new System.Drawing.Size(137, 118);
             this.logoImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoImg.TabIndex = 0;
             this.logoImg.TabStop = false;
@@ -166,12 +147,12 @@ namespace TPWinForm_Jannello_Vaca
             // dgvTabla
             // 
             this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTabla.Location = new System.Drawing.Point(137, 144);
+            this.dgvTabla.Location = new System.Drawing.Point(137, 153);
             this.dgvTabla.MultiSelect = false;
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.RowHeadersWidth = 51;
             this.dgvTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTabla.Size = new System.Drawing.Size(854, 264);
+            this.dgvTabla.Size = new System.Drawing.Size(854, 255);
             this.dgvTabla.TabIndex = 1;
             // 
             // ordenarPor
@@ -262,7 +243,7 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // columnaFiltrar
             // 
-            this.columnaFiltrar.Location = new System.Drawing.Point(137, 123);
+            this.columnaFiltrar.Location = new System.Drawing.Point(138, 124);
             this.columnaFiltrar.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.columnaFiltrar.Name = "columnaFiltrar";
             this.columnaFiltrar.Size = new System.Drawing.Size(50, 18);
@@ -324,7 +305,6 @@ namespace TPWinForm_Jannello_Vaca
 
         private System.Windows.Forms.Panel PanelMenu;
         private System.Windows.Forms.PictureBox logoImg;
-        private System.Windows.Forms.Button BtnConfiguracion;
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnSesion;
