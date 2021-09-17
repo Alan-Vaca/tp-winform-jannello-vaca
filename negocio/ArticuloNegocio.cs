@@ -16,7 +16,7 @@ namespace negocio
             try
             {
                 string consulta = "Select Codigo, IdCategoria, IdMarca, A.Descripcion Descripcion, Precio, Nombre, ImagenUrl, M.Descripcion Marca, C.Descripcion Categoria From ARTICULOS A, MARCAS M, CATEGORIAS C " + where;
-
+                // Agregué a la consulta para que traiga las descripciones de las marcas y de las categorías 
                 AccesoDatos.setearConsulta(consulta);
                 AccesoDatos.ejecutarLectura();
                 while (AccesoDatos.Lector.Read())

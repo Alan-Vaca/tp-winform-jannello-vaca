@@ -23,19 +23,27 @@ namespace TPWinForm_Jannello_Vaca
 
         private void AppForm_Load(object sender, EventArgs e)
         {
-            dgvTabla.DataSource = negocio.listar("Where A.IdMarca = M.Id and A.IdCategoria = C.Id");
+            reLoadTable();
         }
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
             formAgregar form = new formAgregar();
             form.ShowDialog();
+            reLoadTable();
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             eliminarForm form = new eliminarForm();
             form.ShowDialog();
+            reLoadTable();
         }
+
+        private void reLoadTable()
+        {
+            dgvTabla.DataSource = negocio.listar("Where A.IdMarca = M.Id and A.IdCategoria = C.Id");
+        }
+
     }
 }

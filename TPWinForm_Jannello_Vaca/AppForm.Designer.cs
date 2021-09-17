@@ -36,7 +36,6 @@ namespace TPWinForm_Jannello_Vaca
             this.BtnSesion = new System.Windows.Forms.Button();
             this.BtnConfiguracion = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
-            this.BtnListar = new System.Windows.Forms.Button();
             this.logoImg = new System.Windows.Forms.PictureBox();
             this.dgvTabla = new System.Windows.Forms.DataGridView();
             this.ordenarPor = new System.Windows.Forms.Label();
@@ -64,7 +63,6 @@ namespace TPWinForm_Jannello_Vaca
             this.PanelMenu.Controls.Add(this.BtnSesion);
             this.PanelMenu.Controls.Add(this.BtnConfiguracion);
             this.PanelMenu.Controls.Add(this.BtnModificar);
-            this.PanelMenu.Controls.Add(this.BtnListar);
             this.PanelMenu.Controls.Add(this.logoImg);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
@@ -80,7 +78,7 @@ namespace TPWinForm_Jannello_Vaca
             this.buttonAgregar.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAgregar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAgregar.Location = new System.Drawing.Point(2, 178);
+            this.buttonAgregar.Location = new System.Drawing.Point(2, 153);
             this.buttonAgregar.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(135, 35);
@@ -97,7 +95,7 @@ namespace TPWinForm_Jannello_Vaca
             this.BtnEliminar.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnEliminar.Location = new System.Drawing.Point(2, 248);
+            this.BtnEliminar.Location = new System.Drawing.Point(1, 223);
             this.BtnEliminar.Margin = new System.Windows.Forms.Padding(0);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(135, 35);
@@ -146,29 +144,13 @@ namespace TPWinForm_Jannello_Vaca
             this.BtnModificar.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnModificar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnModificar.Location = new System.Drawing.Point(2, 213);
+            this.BtnModificar.Location = new System.Drawing.Point(2, 188);
             this.BtnModificar.Margin = new System.Windows.Forms.Padding(0);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(135, 35);
             this.BtnModificar.TabIndex = 2;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = false;
-            // 
-            // BtnListar
-            // 
-            this.BtnListar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnListar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnListar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnListar.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.BtnListar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnListar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnListar.Location = new System.Drawing.Point(1, 144);
-            this.BtnListar.Margin = new System.Windows.Forms.Padding(0);
-            this.BtnListar.Name = "BtnListar";
-            this.BtnListar.Size = new System.Drawing.Size(135, 35);
-            this.BtnListar.TabIndex = 1;
-            this.BtnListar.Text = "Ver lista de artículos";
-            this.BtnListar.UseVisualStyleBackColor = false;
             // 
             // logoImg
             // 
@@ -185,8 +167,10 @@ namespace TPWinForm_Jannello_Vaca
             // 
             this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTabla.Location = new System.Drawing.Point(137, 144);
+            this.dgvTabla.MultiSelect = false;
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.RowHeadersWidth = 51;
+            this.dgvTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTabla.Size = new System.Drawing.Size(854, 264);
             this.dgvTabla.TabIndex = 1;
             // 
@@ -223,7 +207,7 @@ namespace TPWinForm_Jannello_Vaca
             this.listaCategoria.Location = new System.Drawing.Point(686, 123);
             this.listaCategoria.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.listaCategoria.Name = "listaCategoria";
-            this.listaCategoria.Size = new System.Drawing.Size(101, 21);
+            this.listaCategoria.Size = new System.Drawing.Size(89, 21);
             this.listaCategoria.TabIndex = 9;
             // 
             // columnaDescripcion
@@ -259,7 +243,7 @@ namespace TPWinForm_Jannello_Vaca
             // columnaHasta
             // 
             this.columnaHasta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.columnaHasta.Location = new System.Drawing.Point(932, 123);
+            this.columnaHasta.Location = new System.Drawing.Point(927, 123);
             this.columnaHasta.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.columnaHasta.Multiline = true;
             this.columnaHasta.Name = "columnaHasta";
@@ -288,7 +272,7 @@ namespace TPWinForm_Jannello_Vaca
             // columnaDesde
             // 
             this.columnaDesde.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.columnaDesde.Location = new System.Drawing.Point(873, 123);
+            this.columnaDesde.Location = new System.Drawing.Point(867, 123);
             this.columnaDesde.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.columnaDesde.Multiline = true;
             this.columnaDesde.Name = "columnaDesde";
@@ -297,10 +281,10 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // columnaRangoPrecio
             // 
-            this.columnaRangoPrecio.Location = new System.Drawing.Point(786, 123);
+            this.columnaRangoPrecio.Location = new System.Drawing.Point(784, 126);
             this.columnaRangoPrecio.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.columnaRangoPrecio.Name = "columnaRangoPrecio";
-            this.columnaRangoPrecio.Size = new System.Drawing.Size(87, 18);
+            this.columnaRangoPrecio.Size = new System.Drawing.Size(83, 18);
             this.columnaRangoPrecio.TabIndex = 17;
             this.columnaRangoPrecio.Text = "Rango precio";
             // 
@@ -340,7 +324,6 @@ namespace TPWinForm_Jannello_Vaca
 
         private System.Windows.Forms.Panel PanelMenu;
         private System.Windows.Forms.PictureBox logoImg;
-        private System.Windows.Forms.Button BtnListar;
         private System.Windows.Forms.Button BtnConfiguracion;
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnEliminar;
