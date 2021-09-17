@@ -11,9 +11,10 @@ namespace dominio
         public int Id { get; set; }
         public string Descripcion { get; set; }
 
-        public Categoria(int id)
+        public Categoria(int id, string desc)
         {
             this.Id = id;
+            this.Descripcion = desc;
         }
         public override string ToString()
         {

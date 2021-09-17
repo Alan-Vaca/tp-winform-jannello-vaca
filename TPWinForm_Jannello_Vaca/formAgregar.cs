@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
+using negocio;
 
 namespace TPWinForm_Jannello_Vaca
 {
@@ -17,5 +19,14 @@ namespace TPWinForm_Jannello_Vaca
             InitializeComponent();
         }
 
+        private void formAgregar_Load(object sender, EventArgs e)
+        {
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            List<Marca> marcas = marcaNegocio.listar("");
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            List<Categoria> categorias = categoriaNegocio.listar("");
+            comboBoxCategorias.DataSource = categorias;
+            comboBoxMarca.DataSource = marcas;
+        }
     }
 }

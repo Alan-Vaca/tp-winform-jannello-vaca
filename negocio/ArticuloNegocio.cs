@@ -16,7 +16,7 @@ namespace negocio
             try
             {
                 AccesoDatos.cerrarConexion();
-                string consulta = "Select  * from ARTICULOS" + where;
+                string consulta = "Select A.Id Id, Codigo, IdCategoria, IdMarca, A.Descripcion Descripcion, Precio, Nombre, ImagenUrl, M.Descripcion Marca, C.Descripcion Categoria From ARTICULOS A, MARCAS M, CATEGORIAS C " + where;
 
                 AccesoDatos.setearConsulta(consulta);
                 AccesoDatos.ejecutarLectura();
@@ -29,10 +29,9 @@ namespace negocio
                     articulo.Descripcion = (string)AccesoDatos.Lector["Descripcion"];
                     articulo.URLimagen = (string)AccesoDatos.Lector["ImagenUrl"];
                     articulo.precio = (decimal)AccesoDatos.Lector["Precio"];
-
-                    articulo.Marca = new Marca((int)AccesoDatos.Lector["IdMarca"]);
-                    articulo.Categoria = new Categoria((int)AccesoDatos.Lector["IdCategoria"]);
-
+                    articulo.Marca = new Marca((int)AccesoDatos.Lector["IdMarca"], (string)AccesoDatos.Lector["Marca"]);
+                    articulo.Categoria = new Categoria((int)AccesoDatos.Lector["IdCategoria"], (string)AccesoDatos.Lector["Categoria"]);
+                    // Agrego en los constructores las descripciones, así nos ahorramos el foreach de getDescripciones
                     lista.Add(articulo);
                 }
             }
@@ -44,19 +43,10 @@ namespace negocio
             {
                 AccesoDatos.cerrarConexion();
             }
-            if (lista.Count != 0)
-            {
-                foreach (Articulo item in lista)
-                {
-                    item.Marca.Descripcion = obtenerDescripcionM(item.Marca.Id);
-                    item.Categoria.Descripcion = obtenerDescripcionC(item.Categoria.Id);
-                }
-            }
-
-
+         // Borré el foreach porque hacía una iteración innecesaria, podemos traer directamente en la misma consulta todo
             return lista;
         }
-
+        // Estos métodos no hacen falta, podemos traer directamente lo que necesitamos en la consulta y despues agregarlo en el constructor
         public string obtenerDescripcionM(int _id)
         {
             string consulta = "Select * from MARCAS where ID =" + _id;

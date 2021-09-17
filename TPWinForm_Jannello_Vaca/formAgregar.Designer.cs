@@ -44,8 +44,8 @@ namespace TPWinForm_Jannello_Vaca
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelMarca = new System.Windows.Forms.Label();
             this.labelCategoria = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxMarca = new System.Windows.Forms.ComboBox();
+            this.comboBoxCategorias = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // agregarBtn
@@ -165,29 +165,29 @@ namespace TPWinForm_Jannello_Vaca
             this.labelCategoria.TabIndex = 13;
             this.labelCategoria.Text = "Categoría";
             // 
-            // comboBox1
+            // comboBoxMarca
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(354, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(96, 21);
-            this.comboBox1.TabIndex = 14;
+            this.comboBoxMarca.FormattingEnabled = true;
+            this.comboBoxMarca.Location = new System.Drawing.Point(354, 37);
+            this.comboBoxMarca.Name = "comboBoxMarca";
+            this.comboBoxMarca.Size = new System.Drawing.Size(96, 21);
+            this.comboBoxMarca.TabIndex = 14;
             // 
-            // comboBox2
+            // comboBoxCategorias
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(354, 89);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(96, 21);
-            this.comboBox2.TabIndex = 15;
+            this.comboBoxCategorias.FormattingEnabled = true;
+            this.comboBoxCategorias.Location = new System.Drawing.Point(354, 89);
+            this.comboBoxCategorias.Name = "comboBoxCategorias";
+            this.comboBoxCategorias.Size = new System.Drawing.Size(96, 21);
+            this.comboBoxCategorias.TabIndex = 15;
             // 
             // formAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(462, 317);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxCategorias);
+            this.Controls.Add(this.comboBoxMarca);
             this.Controls.Add(this.labelCategoria);
             this.Controls.Add(this.labelMarca);
             this.Controls.Add(this.textBox1);
@@ -205,6 +205,7 @@ namespace TPWinForm_Jannello_Vaca
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formAgregar";
             this.Text = "Agregar un artículo";
+            this.Load += new System.EventHandler(this.formAgregar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,7 +227,7 @@ namespace TPWinForm_Jannello_Vaca
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label labelMarca;
         private System.Windows.Forms.Label labelCategoria;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxMarca;
+        private System.Windows.Forms.ComboBox comboBoxCategorias;
     }
 }
