@@ -11,14 +11,14 @@ namespace dominio
         public int Id { get; set; }
         public string Descripcion { get; set; }
 
-        public Marca(int id, string desc)
+        public Marca(int id)
         {
             this.Id = id;
-            this.Descripcion = desc;
         }
         public override string ToString()
         {
             return Descripcion;
         }
+        
     }
 }
