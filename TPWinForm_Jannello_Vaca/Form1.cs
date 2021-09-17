@@ -22,9 +22,15 @@ namespace TPWinForm_Jannello_Vaca
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AppForm_Load(object sender, EventArgs e)
         {
-
+            allArticulosPanel.Visible = true;
         }
+
+        private void articulosListButton_Click(object sender, EventArgs e)
+        {
+            allArticulosPanel.Visible = true;
+        }
+
     }
 }
