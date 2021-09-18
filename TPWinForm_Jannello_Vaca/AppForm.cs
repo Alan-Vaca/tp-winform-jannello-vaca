@@ -163,5 +163,34 @@ namespace TPWinForm_Jannello_Vaca
         {
             filtrarPorPrecio();
         }
+
+        private void resetFiltroPrecio()
+        {
+            nudMax.Value = 0;
+            nudMax.Value = 0;
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            string valorABuscar = textBoxBuscador.Text;
+            List<Articulo> artEncontrado = new List<Articulo>();
+            foreach (Articulo articulo in fetchedArticulos)
+            {
+                if (articulo.CodigoArticulo.Contains(valorABuscar) || articulo.Nombre.Contains(valorABuscar) || articulo.Descripcion.Contains(valorABuscar))
+                {
+                    artEncontrado.Add(articulo);
+                }
+            }
+            resetFiltroPrecio();
+            dgvTabla.DataSource = artEncontrado;
+            buttonCancelBusqueda.Visible = true;
+        }
+
+        private void buttonCancelBusqueda_Click(object sender, EventArgs e)
+        {
+            dgvTabla.DataSource = fetchedArticulos;
+            buttonCancelBusqueda.Visible = false;
+            textBoxBuscador.Text = null;
+        }
     }
 }

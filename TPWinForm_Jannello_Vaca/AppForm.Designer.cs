@@ -40,15 +40,14 @@ namespace TPWinForm_Jannello_Vaca
             this.ordenarPor = new System.Windows.Forms.Label();
             this.cbOrdernarPor = new System.Windows.Forms.ComboBox();
             this.listaCategoria = new System.Windows.Forms.ComboBox();
-            this.columnaDescripcion = new System.Windows.Forms.TextBox();
-            this.columnaNombre = new System.Windows.Forms.TextBox();
-            this.columnaCodigoArticulo = new System.Windows.Forms.TextBox();
-            this.columnaID = new System.Windows.Forms.TextBox();
-            this.columnaFiltrar = new System.Windows.Forms.Label();
+            this.textBoxBuscador = new System.Windows.Forms.TextBox();
+            this.textLabelBuscador = new System.Windows.Forms.Label();
             this.columnaRangoPrecio = new System.Windows.Forms.Label();
             this.nudMin = new System.Windows.Forms.NumericUpDown();
             this.nudMax = new System.Windows.Forms.NumericUpDown();
             this.listaMarca = new System.Windows.Forms.ComboBox();
+            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.buttonCancelBusqueda = new System.Windows.Forms.Button();
             this.PanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
@@ -195,54 +194,24 @@ namespace TPWinForm_Jannello_Vaca
             this.listaCategoria.Size = new System.Drawing.Size(89, 21);
             this.listaCategoria.TabIndex = 9;
             // 
-            // columnaDescripcion
+            // textBoxBuscador
             // 
-            this.columnaDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.columnaDescripcion.Location = new System.Drawing.Point(487, 123);
-            this.columnaDescripcion.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.columnaDescripcion.Multiline = true;
-            this.columnaDescripcion.Name = "columnaDescripcion";
-            this.columnaDescripcion.Size = new System.Drawing.Size(101, 20);
-            this.columnaDescripcion.TabIndex = 10;
+            this.textBoxBuscador.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxBuscador.Location = new System.Drawing.Point(153, 112);
+            this.textBoxBuscador.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.textBoxBuscador.Multiline = true;
+            this.textBoxBuscador.Name = "textBoxBuscador";
+            this.textBoxBuscador.Size = new System.Drawing.Size(163, 20);
+            this.textBoxBuscador.TabIndex = 14;
             // 
-            // columnaNombre
+            // textLabelBuscador
             // 
-            this.columnaNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.columnaNombre.Location = new System.Drawing.Point(387, 123);
-            this.columnaNombre.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.columnaNombre.Multiline = true;
-            this.columnaNombre.Name = "columnaNombre";
-            this.columnaNombre.Size = new System.Drawing.Size(101, 20);
-            this.columnaNombre.TabIndex = 11;
-            // 
-            // columnaCodigoArticulo
-            // 
-            this.columnaCodigoArticulo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.columnaCodigoArticulo.Location = new System.Drawing.Point(287, 123);
-            this.columnaCodigoArticulo.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.columnaCodigoArticulo.Multiline = true;
-            this.columnaCodigoArticulo.Name = "columnaCodigoArticulo";
-            this.columnaCodigoArticulo.Size = new System.Drawing.Size(101, 20);
-            this.columnaCodigoArticulo.TabIndex = 12;
-            // 
-            // columnaID
-            // 
-            this.columnaID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.columnaID.Location = new System.Drawing.Point(188, 123);
-            this.columnaID.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.columnaID.Multiline = true;
-            this.columnaID.Name = "columnaID";
-            this.columnaID.Size = new System.Drawing.Size(101, 20);
-            this.columnaID.TabIndex = 14;
-            // 
-            // columnaFiltrar
-            // 
-            this.columnaFiltrar.Location = new System.Drawing.Point(138, 124);
-            this.columnaFiltrar.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.columnaFiltrar.Name = "columnaFiltrar";
-            this.columnaFiltrar.Size = new System.Drawing.Size(50, 18);
-            this.columnaFiltrar.TabIndex = 15;
-            this.columnaFiltrar.Text = "Filtrar";
+            this.textLabelBuscador.Location = new System.Drawing.Point(150, 87);
+            this.textLabelBuscador.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.textLabelBuscador.Name = "textLabelBuscador";
+            this.textLabelBuscador.Size = new System.Drawing.Size(313, 23);
+            this.textLabelBuscador.TabIndex = 15;
+            this.textLabelBuscador.Text = "BUSCAR POR CODIGO, NOMBRE O DESCRIPCIÓN:";
             // 
             // columnaRangoPrecio
             // 
@@ -298,20 +267,46 @@ namespace TPWinForm_Jannello_Vaca
             this.listaMarca.Size = new System.Drawing.Size(101, 21);
             this.listaMarca.TabIndex = 8;
             // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBuscar.BackgroundImage")));
+            this.buttonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonBuscar.Location = new System.Drawing.Point(319, 111);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(24, 24);
+            this.buttonBuscar.TabIndex = 20;
+            this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.buttonBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            // 
+            // buttonCancelBusqueda
+            // 
+            this.buttonCancelBusqueda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCancelBusqueda.BackgroundImage")));
+            this.buttonCancelBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonCancelBusqueda.Location = new System.Drawing.Point(349, 111);
+            this.buttonCancelBusqueda.Name = "buttonCancelBusqueda";
+            this.buttonCancelBusqueda.Size = new System.Drawing.Size(24, 24);
+            this.buttonCancelBusqueda.TabIndex = 21;
+            this.buttonCancelBusqueda.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.buttonCancelBusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonCancelBusqueda.UseVisualStyleBackColor = true;
+            this.buttonCancelBusqueda.Visible = false;
+            this.buttonCancelBusqueda.Click += new System.EventHandler(this.buttonCancelBusqueda_Click);
+            // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(993, 408);
+            this.Controls.Add(this.buttonCancelBusqueda);
+            this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.nudMax);
             this.Controls.Add(this.nudMin);
             this.Controls.Add(this.columnaRangoPrecio);
-            this.Controls.Add(this.columnaFiltrar);
-            this.Controls.Add(this.columnaID);
-            this.Controls.Add(this.columnaCodigoArticulo);
-            this.Controls.Add(this.columnaNombre);
-            this.Controls.Add(this.columnaDescripcion);
+            this.Controls.Add(this.textLabelBuscador);
+            this.Controls.Add(this.textBoxBuscador);
             this.Controls.Add(this.listaCategoria);
             this.Controls.Add(this.listaMarca);
             this.Controls.Add(this.cbOrdernarPor);
@@ -344,16 +339,15 @@ namespace TPWinForm_Jannello_Vaca
         private System.Windows.Forms.Label ordenarPor;
         private System.Windows.Forms.ComboBox cbOrdernarPor;
         private System.Windows.Forms.ComboBox listaCategoria;
-        private System.Windows.Forms.TextBox columnaDescripcion;
-        private System.Windows.Forms.TextBox columnaNombre;
-        private System.Windows.Forms.TextBox columnaCodigoArticulo;
-        private System.Windows.Forms.TextBox columnaID;
-        private System.Windows.Forms.Label columnaFiltrar;
+        private System.Windows.Forms.TextBox textBoxBuscador;
+        private System.Windows.Forms.Label textLabelBuscador;
         private System.Windows.Forms.Label columnaRangoPrecio;
         private System.Windows.Forms.Button buttonAgregar;
         private System.Windows.Forms.NumericUpDown nudMin;
         private System.Windows.Forms.NumericUpDown nudMax;
         private System.Windows.Forms.ComboBox listaMarca;
+        private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.Button buttonCancelBusqueda;
     }
 }
 
