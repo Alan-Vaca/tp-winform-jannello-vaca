@@ -394,7 +394,7 @@ namespace TPWinForm_Jannello_Vaca
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "AppForm";
             this.Text = "Trabajo Práctico WinForms";
-            this.Load += new System.EventHandler(this.AppForm_Load);
+            this.Load += new System.EventHandler(this.Window_Load);
             this.PanelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).EndInit();
