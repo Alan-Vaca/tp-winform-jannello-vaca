@@ -15,7 +15,6 @@ namespace TPWinForm_Jannello_Vaca
     public partial class AppForm : Form
     {
         ArticuloNegocio negocio = new ArticuloNegocio();
-        detalles detalles = new detalles();
 
 
         public AppForm()
@@ -96,25 +95,14 @@ namespace TPWinForm_Jannello_Vaca
                     break;
             }
         }
-        private void dataGridViewListar_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void BtnVerDetalle_Click(object sender, EventArgs e)
         {
-            Int32 selectedCellCount = dgvTabla.GetCellCount(DataGridViewElementStates.Selected);
-            int fila = -1;
-            if (selectedCellCount > 0)
-            {
-                new System.Text.StringBuilder();
-                for (int i = 0; i < selectedCellCount; i++) { fila = dgvTabla.SelectedCells[i].RowIndex; }
-                detalles.id(dgvTabla[0, fila].Value.ToString());
-                detalles.cod(dgvTabla[1, fila].Value.ToString());
-                detalles.nombre(dgvTabla[2, fila].Value.ToString());
-                detalles.descrip(dgvTabla[3, fila].Value.ToString());
-                detalles.marca(dgvTabla[4, fila].Value.ToString());
-                detalles.categ(dgvTabla[5, fila].Value.ToString());
-                detalles.imagen(dgvTabla[6, fila].Value.ToString());
-                detalles.precio(dgvTabla[7, fila].Value.ToString());
-                detalles.ShowDialog();
-                reLoadTable();
-            }
+            Articulo art;
+            art = (Articulo)dgvTabla.CurrentRow.DataBoundItem;
+            detalles detalles = new detalles(art);
+            detalles.ShowDialog();
+            reLoadTable();
         }
     }
 }

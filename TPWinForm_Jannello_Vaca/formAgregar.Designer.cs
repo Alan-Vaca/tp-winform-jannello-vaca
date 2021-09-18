@@ -169,6 +169,7 @@ namespace TPWinForm_Jannello_Vaca
             this.comboBoxMarca.Name = "comboBoxMarca";
             this.comboBoxMarca.Size = new System.Drawing.Size(96, 21);
             this.comboBoxMarca.TabIndex = 14;
+            this.comboBoxMarca.SelectedIndexChanged += new System.EventHandler(this.comboBoxMarca_SelectedIndexChanged);
             // 
             // comboBoxCategorias
             // 

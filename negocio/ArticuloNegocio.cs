@@ -114,6 +114,26 @@ namespace negocio
             {
                 throw ex;
             }
+            finally
+            {
+                AccesoDatos.cerrarConexion();
+            }
+        }
+        public void modificar(Articulo art)
+        {
+            string consulta = $"update ARTICULOS set Codigo ='{art.CodigoArticulo}', Nombre = '{art.Nombre}', Descripcion = '{art.Descripcion}', IdMarca={art.Marca.Id}, IdCategoria={art.Categoria.Id}, ImagenUrl='{art.URLimagen}', Precio={art.Precio} Where Id={art.Id}"; 
+            try
+            {
+                AccesoDatos.setearConsulta(consulta);
+                AccesoDatos.ejectutarAccion();
+            } catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                AccesoDatos.cerrarConexion();
+            }
         }
     }
 }

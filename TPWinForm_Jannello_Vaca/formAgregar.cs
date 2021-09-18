@@ -63,5 +63,10 @@ namespace TPWinForm_Jannello_Vaca
                 MessageBox.Show("¡Error! " + ex.ToString());
             }
         }
+
+        private void comboBoxMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

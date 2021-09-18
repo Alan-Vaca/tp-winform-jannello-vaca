@@ -34,7 +34,7 @@ namespace TPWinForm_Jannello_Vaca
             this.buttonAgregar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnSesion = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
+            this.BtnVerDetalle = new System.Windows.Forms.Button();
             this.logoImg = new System.Windows.Forms.PictureBox();
             this.dgvTabla = new System.Windows.Forms.DataGridView();
             this.ordenarPor = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@ namespace TPWinForm_Jannello_Vaca
             this.PanelMenu.Controls.Add(this.buttonAgregar);
             this.PanelMenu.Controls.Add(this.BtnEliminar);
             this.PanelMenu.Controls.Add(this.BtnSesion);
-            this.PanelMenu.Controls.Add(this.BtnModificar);
+            this.PanelMenu.Controls.Add(this.BtnVerDetalle);
             this.PanelMenu.Controls.Add(this.logoImg);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
@@ -79,7 +79,7 @@ namespace TPWinForm_Jannello_Vaca
             this.buttonAgregar.Location = new System.Drawing.Point(1, 153);
             this.buttonAgregar.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(136, 35);
+            this.buttonAgregar.Size = new System.Drawing.Size(135, 35);
             this.buttonAgregar.TabIndex = 6;
             this.buttonAgregar.Text = "Agregar artículo";
             this.buttonAgregar.UseVisualStyleBackColor = false;
@@ -95,9 +95,9 @@ namespace TPWinForm_Jannello_Vaca
             this.BtnEliminar.Location = new System.Drawing.Point(0, 223);
             this.BtnEliminar.Margin = new System.Windows.Forms.Padding(0);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(137, 35);
+            this.BtnEliminar.Size = new System.Drawing.Size(136, 35);
             this.BtnEliminar.TabIndex = 5;
-            this.BtnEliminar.Text = "Eliminar artículo";
+            this.BtnEliminar.Text = "Eliminar artículo por ID";
             this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
@@ -117,21 +117,22 @@ namespace TPWinForm_Jannello_Vaca
             this.BtnSesion.UseVisualStyleBackColor = false;
             this.BtnSesion.Click += new System.EventHandler(this.BtnSesion_Click);
             // 
-            // BtnModificar
+            // BtnVerDetalle
             // 
-            this.BtnModificar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.BtnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnModificar.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.BtnModificar.FlatAppearance.BorderSize = 0;
-            this.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnModificar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnModificar.Location = new System.Drawing.Point(2, 188);
-            this.BtnModificar.Margin = new System.Windows.Forms.Padding(0);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(135, 35);
-            this.BtnModificar.TabIndex = 2;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = false;
+            this.BtnVerDetalle.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnVerDetalle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnVerDetalle.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BtnVerDetalle.FlatAppearance.BorderSize = 0;
+            this.BtnVerDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVerDetalle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnVerDetalle.Location = new System.Drawing.Point(2, 188);
+            this.BtnVerDetalle.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnVerDetalle.Name = "BtnVerDetalle";
+            this.BtnVerDetalle.Size = new System.Drawing.Size(134, 35);
+            this.BtnVerDetalle.TabIndex = 2;
+            this.BtnVerDetalle.Text = "Ver Detalle";
+            this.BtnVerDetalle.UseVisualStyleBackColor = false;
+            this.BtnVerDetalle.Click += new System.EventHandler(this.BtnVerDetalle_Click);
             // 
             // logoImg
             // 
@@ -150,16 +151,17 @@ namespace TPWinForm_Jannello_Vaca
             // 
             this.dgvTabla.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTabla.Location = new System.Drawing.Point(183, 188);
+            this.dgvTabla.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvTabla.Location = new System.Drawing.Point(153, 165);
             this.dgvTabla.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTabla.MultiSelect = false;
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.ReadOnly = true;
+            this.dgvTabla.RowHeadersVisible = false;
             this.dgvTabla.RowHeadersWidth = 51;
             this.dgvTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTabla.Size = new System.Drawing.Size(1139, 314);
+            this.dgvTabla.Size = new System.Drawing.Size(769, 195);
             this.dgvTabla.TabIndex = 1;
-            this.dgvTabla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListar_CellClick);
             // 
             // ordenarPor
             // 
@@ -314,7 +316,7 @@ namespace TPWinForm_Jannello_Vaca
 
         private System.Windows.Forms.Panel PanelMenu;
         private System.Windows.Forms.PictureBox logoImg;
-        private System.Windows.Forms.Button BtnModificar;
+        private System.Windows.Forms.Button BtnVerDetalle;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnSesion;
         private System.Windows.Forms.DataGridView dgvTabla;
