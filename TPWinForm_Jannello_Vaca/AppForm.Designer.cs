@@ -49,17 +49,17 @@ namespace TPWinForm_Jannello_Vaca
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.columnaRangoPrecio = new System.Windows.Forms.Label();
-            this.nudMin = new System.Windows.Forms.NumericUpDown();
-            this.nudMax = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.nudMax = new System.Windows.Forms.NumericUpDown();
+            this.nudMin = new System.Windows.Forms.NumericUpDown();
+            this.columnaRangoPrecio = new System.Windows.Forms.Label();
             this.PanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMin)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelMenu
@@ -72,7 +72,7 @@ namespace TPWinForm_Jannello_Vaca
             this.PanelMenu.Controls.Add(this.logoImg);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
-            this.PanelMenu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.PanelMenu.Margin = new System.Windows.Forms.Padding(5);
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(183, 502);
             this.PanelMenu.TabIndex = 0;
@@ -148,7 +148,7 @@ namespace TPWinForm_Jannello_Vaca
             this.logoImg.Image = ((System.Drawing.Image)(resources.GetObject("logoImg.Image")));
             this.logoImg.InitialImage = ((System.Drawing.Image)(resources.GetObject("logoImg.InitialImage")));
             this.logoImg.Location = new System.Drawing.Point(0, 0);
-            this.logoImg.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.logoImg.Margin = new System.Windows.Forms.Padding(5);
             this.logoImg.Name = "logoImg";
             this.logoImg.Size = new System.Drawing.Size(183, 145);
             this.logoImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -161,7 +161,7 @@ namespace TPWinForm_Jannello_Vaca
             this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTabla.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvTabla.Location = new System.Drawing.Point(204, 203);
-            this.dgvTabla.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dgvTabla.Margin = new System.Windows.Forms.Padding(5);
             this.dgvTabla.MultiSelect = false;
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.ReadOnly = true;
@@ -199,6 +199,7 @@ namespace TPWinForm_Jannello_Vaca
             this.listaCategoria.Name = "listaCategoria";
             this.listaCategoria.Size = new System.Drawing.Size(128, 24);
             this.listaCategoria.TabIndex = 9;
+            this.listaCategoria.SelectedIndexChanged += new System.EventHandler(this.filtrarPorMarcaYCategoria);
             // 
             // textBoxBuscador
             // 
@@ -228,13 +229,14 @@ namespace TPWinForm_Jannello_Vaca
             this.listaMarca.Name = "listaMarca";
             this.listaMarca.Size = new System.Drawing.Size(136, 24);
             this.listaMarca.TabIndex = 8;
+            this.listaMarca.SelectedIndexChanged += new System.EventHandler(this.filtrarPorMarcaYCategoria);
             // 
             // buttonBuscar
             // 
             this.buttonBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBuscar.BackgroundImage")));
             this.buttonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonBuscar.Location = new System.Drawing.Point(449, 142);
-            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(32, 30);
             this.buttonBuscar.TabIndex = 20;
@@ -248,7 +250,7 @@ namespace TPWinForm_Jannello_Vaca
             this.buttonCancelBusqueda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCancelBusqueda.BackgroundImage")));
             this.buttonCancelBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonCancelBusqueda.Location = new System.Drawing.Point(501, 142);
-            this.buttonCancelBusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCancelBusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancelBusqueda.Name = "buttonCancelBusqueda";
             this.buttonCancelBusqueda.Size = new System.Drawing.Size(32, 30);
             this.buttonCancelBusqueda.TabIndex = 21;
@@ -302,33 +304,24 @@ namespace TPWinForm_Jannello_Vaca
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // columnaRangoPrecio
+            // label3
             // 
-            this.columnaRangoPrecio.Location = new System.Drawing.Point(-3, 41);
-            this.columnaRangoPrecio.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.columnaRangoPrecio.Name = "columnaRangoPrecio";
-            this.columnaRangoPrecio.Size = new System.Drawing.Size(142, 22);
-            this.columnaRangoPrecio.TabIndex = 17;
-            this.columnaRangoPrecio.Text = "PRECIO";
+            this.label3.Location = new System.Drawing.Point(134, 6);
+            this.label3.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 22);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "DESDE";
             // 
-            // nudMin
+            // label4
             // 
-            this.nudMin.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.nudMin.Location = new System.Drawing.Point(137, 39);
-            this.nudMin.Margin = new System.Windows.Forms.Padding(4);
-            this.nudMin.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.nudMin.Name = "nudMin";
-            this.nudMin.Size = new System.Drawing.Size(136, 22);
-            this.nudMin.TabIndex = 18;
-            this.nudMin.ValueChanged += new System.EventHandler(this.nudMin_ValueChanged);
+            this.label4.Location = new System.Drawing.Point(342, 6);
+            this.label4.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 22);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "HASTA";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // nudMax
             // 
@@ -349,24 +342,33 @@ namespace TPWinForm_Jannello_Vaca
             this.nudMax.TabIndex = 19;
             this.nudMax.ValueChanged += new System.EventHandler(this.nudMax_ValueChanged);
             // 
-            // label3
+            // nudMin
             // 
-            this.label3.Location = new System.Drawing.Point(134, 6);
-            this.label3.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 22);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "DESDE";
+            this.nudMin.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudMin.Location = new System.Drawing.Point(137, 39);
+            this.nudMin.Margin = new System.Windows.Forms.Padding(4);
+            this.nudMin.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.nudMin.Name = "nudMin";
+            this.nudMin.Size = new System.Drawing.Size(136, 22);
+            this.nudMin.TabIndex = 18;
+            this.nudMin.ValueChanged += new System.EventHandler(this.nudMin_ValueChanged);
             // 
-            // label4
+            // columnaRangoPrecio
             // 
-            this.label4.Location = new System.Drawing.Point(342, 6);
-            this.label4.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 22);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "HASTA";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.columnaRangoPrecio.Location = new System.Drawing.Point(-3, 41);
+            this.columnaRangoPrecio.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.columnaRangoPrecio.Name = "columnaRangoPrecio";
+            this.columnaRangoPrecio.Size = new System.Drawing.Size(142, 22);
+            this.columnaRangoPrecio.TabIndex = 17;
+            this.columnaRangoPrecio.Text = "PRECIO";
             // 
             // AppForm
             // 
@@ -389,7 +391,7 @@ namespace TPWinForm_Jannello_Vaca
             this.Controls.Add(this.dgvTabla);
             this.Controls.Add(this.PanelMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "AppForm";
             this.Text = "Trabajo Práctico WinForms";
             this.Load += new System.EventHandler(this.AppForm_Load);
@@ -397,8 +399,8 @@ namespace TPWinForm_Jannello_Vaca
             ((System.ComponentModel.ISupportInitialize)(this.logoImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -14,6 +14,8 @@ namespace TPWinForm_Jannello_Vaca
 {
     public partial class AppForm : Form
     {
+        public bool banderaFiltroC;
+        public bool banderaFiltroM;
         ArticuloNegocio negocio = new ArticuloNegocio();
         List<Articulo> fetchedArticulos = new List<Articulo>();
 
@@ -25,6 +27,8 @@ namespace TPWinForm_Jannello_Vaca
 
         private void AppForm_Load(object sender, EventArgs e)
         {
+            banderaFiltroC = false;
+            banderaFiltroM = false;
             reLoadTable();
             cbOrdernarPor.Items.Clear();
             cbOrdernarPor.Items.Add("Categoria");
@@ -46,7 +50,8 @@ namespace TPWinForm_Jannello_Vaca
             marcas.Add(auxM);
             listaCategoria.DataSource = categorias;
             listaMarca.DataSource = marcas;
-
+            listaMarca.Text = "Sin Marca";
+            listaCategoria.Text = "Sin Categoria";
         }
 
         private void buttonAgregar_Click(object sender, EventArgs e)
@@ -222,5 +227,45 @@ namespace TPWinForm_Jannello_Vaca
         {
 
         }
+
+
+        public void filtrarPorMarcaYCategoria(object sender, EventArgs e)
+        {
+            if(banderaFiltroC && banderaFiltroM)
+            {
+                int selectMarca = listaMarca.SelectedIndex;
+                int selectCategoria = listaCategoria.SelectedIndex;
+                int cantMarca = listaMarca.Items.Count;
+                int cantCat = listaCategoria.Items.Count;
+                selectMarca++;
+                selectCategoria++;
+                 if (cantMarca != selectMarca && cantCat != selectCategoria)
+                {
+                 dgvTabla.DataSource = negocio.listar(" where M.Id=" + selectMarca + " and C.Id=" + selectCategoria);
+                }
+                else if(cantMarca != selectMarca && cantCat == selectCategoria)
+                {
+                    dgvTabla.DataSource = negocio.listar(" where M.Id=" + selectMarca);
+                }
+                else if(cantCat != selectCategoria && cantMarca == selectMarca)
+                {
+                    dgvTabla.DataSource = negocio.listar(" where C.Id=" + selectCategoria );
+                }
+                else
+                {
+                    dgvTabla.DataSource = negocio.listar("");
+                    cbOrdernarPor_SelectionChangeCommitted( sender, e);
+                }
+            }
+            else if (banderaFiltroM)
+            {
+                banderaFiltroC = true;
+            }
+            else
+            {
+                banderaFiltroM = true;
+            }
+        }
+
     }
 }
