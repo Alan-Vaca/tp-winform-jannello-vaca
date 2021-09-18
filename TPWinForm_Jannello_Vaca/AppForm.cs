@@ -15,6 +15,7 @@ namespace TPWinForm_Jannello_Vaca
     public partial class AppForm : Form
     {
         ArticuloNegocio negocio = new ArticuloNegocio();
+        List<Articulo> fetchedArticulos = new List<Articulo>();
 
 
         public AppForm()
@@ -55,7 +56,8 @@ namespace TPWinForm_Jannello_Vaca
         private void reLoadTable()
         {
             cbOrdernarPor.Text = "Categoria";
-            dgvTabla.DataSource = negocio.listar(" order by C.Id asc");
+            fetchedArticulos = negocio.listar(" order by C.Id asc");
+            dgvTabla.DataSource = fetchedArticulos;
 
         }
 
@@ -112,6 +114,54 @@ namespace TPWinForm_Jannello_Vaca
             detalles detalles = new detalles(art);
             detalles.ShowDialog();
             reLoadTable();
+        }
+
+        public void filtrarPorPrecio()
+        {
+            if (nudMin.Value == 0 && nudMax.Value == 0) {
+                dgvTabla.DataSource = fetchedArticulos;
+                return; // Si estan los dos vacíos no va a hacer nada
+            }
+            decimal max = nudMax.Value;
+            decimal min = nudMin.Value;
+            List<Articulo> articulos = fetchedArticulos;
+            List<Articulo> filtrado = new List<Articulo>();
+            foreach (Articulo articulo in articulos)
+            {
+                bool estaEnIntervalo = checkSiEstaEnIntervalo(max, min, articulo.Precio);
+                if (estaEnIntervalo)
+                    filtrado.Add(articulo);
+            }
+            dgvTabla.DataSource = filtrado;
+        }
+        public bool checkSiEstaEnIntervalo(decimal max, decimal min, decimal precio)
+        {
+            if (max != 0 && min != 0)
+            {
+                if (precio >= min && precio <= max)
+                    return true;
+                else return false;
+            } else if (max != 0)
+            {
+                if (precio <= max)
+                    return true;
+                else return false;
+            } else
+            {
+                if (precio >= min)
+                    return true;
+                else return false;
+            }
+        }
+
+        private void nudMin_ValueChanged(object sender, EventArgs e)
+        {
+            filtrarPorPrecio();
+        }
+
+        private void nudMax_ValueChanged(object sender, EventArgs e)
+        {
+            filtrarPorPrecio();
         }
     }
 }

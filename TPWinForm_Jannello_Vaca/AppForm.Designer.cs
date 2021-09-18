@@ -39,19 +39,21 @@ namespace TPWinForm_Jannello_Vaca
             this.dgvTabla = new System.Windows.Forms.DataGridView();
             this.ordenarPor = new System.Windows.Forms.Label();
             this.cbOrdernarPor = new System.Windows.Forms.ComboBox();
-            this.listaMarca = new System.Windows.Forms.ComboBox();
             this.listaCategoria = new System.Windows.Forms.ComboBox();
             this.columnaDescripcion = new System.Windows.Forms.TextBox();
             this.columnaNombre = new System.Windows.Forms.TextBox();
             this.columnaCodigoArticulo = new System.Windows.Forms.TextBox();
-            this.columnaHasta = new System.Windows.Forms.TextBox();
             this.columnaID = new System.Windows.Forms.TextBox();
             this.columnaFiltrar = new System.Windows.Forms.Label();
-            this.columnaDesde = new System.Windows.Forms.TextBox();
             this.columnaRangoPrecio = new System.Windows.Forms.Label();
+            this.nudMin = new System.Windows.Forms.NumericUpDown();
+            this.nudMax = new System.Windows.Forms.NumericUpDown();
+            this.listaMarca = new System.Windows.Forms.ComboBox();
             this.PanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMax)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelMenu
@@ -184,15 +186,6 @@ namespace TPWinForm_Jannello_Vaca
             this.cbOrdernarPor.TabIndex = 3;
             this.cbOrdernarPor.SelectionChangeCommitted += new System.EventHandler(this.cbOrdernarPor_SelectionChangeCommitted);
             // 
-            // listaMarca
-            // 
-            this.listaMarca.FormattingEnabled = true;
-            this.listaMarca.Location = new System.Drawing.Point(586, 123);
-            this.listaMarca.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.listaMarca.Name = "listaMarca";
-            this.listaMarca.Size = new System.Drawing.Size(101, 21);
-            this.listaMarca.TabIndex = 8;
-            // 
             // listaCategoria
             // 
             this.listaCategoria.FormattingEnabled = true;
@@ -232,16 +225,6 @@ namespace TPWinForm_Jannello_Vaca
             this.columnaCodigoArticulo.Size = new System.Drawing.Size(101, 20);
             this.columnaCodigoArticulo.TabIndex = 12;
             // 
-            // columnaHasta
-            // 
-            this.columnaHasta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.columnaHasta.Location = new System.Drawing.Point(927, 123);
-            this.columnaHasta.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.columnaHasta.Multiline = true;
-            this.columnaHasta.Name = "columnaHasta";
-            this.columnaHasta.Size = new System.Drawing.Size(60, 20);
-            this.columnaHasta.TabIndex = 13;
-            // 
             // columnaID
             // 
             this.columnaID.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -261,24 +244,59 @@ namespace TPWinForm_Jannello_Vaca
             this.columnaFiltrar.TabIndex = 15;
             this.columnaFiltrar.Text = "Filtrar";
             // 
-            // columnaDesde
-            // 
-            this.columnaDesde.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.columnaDesde.Location = new System.Drawing.Point(867, 123);
-            this.columnaDesde.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.columnaDesde.Multiline = true;
-            this.columnaDesde.Name = "columnaDesde";
-            this.columnaDesde.Size = new System.Drawing.Size(60, 20);
-            this.columnaDesde.TabIndex = 16;
-            // 
             // columnaRangoPrecio
             // 
-            this.columnaRangoPrecio.Location = new System.Drawing.Point(784, 126);
+            this.columnaRangoPrecio.Location = new System.Drawing.Point(604, 58);
             this.columnaRangoPrecio.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.columnaRangoPrecio.Name = "columnaRangoPrecio";
             this.columnaRangoPrecio.Size = new System.Drawing.Size(83, 18);
             this.columnaRangoPrecio.TabIndex = 17;
             this.columnaRangoPrecio.Text = "Rango precio";
+            // 
+            // nudMin
+            // 
+            this.nudMin.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudMin.Location = new System.Drawing.Point(709, 56);
+            this.nudMin.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.nudMin.Name = "nudMin";
+            this.nudMin.Size = new System.Drawing.Size(102, 20);
+            this.nudMin.TabIndex = 18;
+            this.nudMin.ValueChanged += new System.EventHandler(this.nudMin_ValueChanged);
+            // 
+            // nudMax
+            // 
+            this.nudMax.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudMax.Location = new System.Drawing.Point(865, 58);
+            this.nudMax.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.nudMax.Name = "nudMax";
+            this.nudMax.Size = new System.Drawing.Size(96, 20);
+            this.nudMax.TabIndex = 19;
+            this.nudMax.ValueChanged += new System.EventHandler(this.nudMax_ValueChanged);
+            // 
+            // listaMarca
+            // 
+            this.listaMarca.FormattingEnabled = true;
+            this.listaMarca.Location = new System.Drawing.Point(586, 123);
+            this.listaMarca.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.listaMarca.Name = "listaMarca";
+            this.listaMarca.Size = new System.Drawing.Size(101, 21);
+            this.listaMarca.TabIndex = 8;
             // 
             // AppForm
             // 
@@ -286,11 +304,11 @@ namespace TPWinForm_Jannello_Vaca
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(993, 408);
+            this.Controls.Add(this.nudMax);
+            this.Controls.Add(this.nudMin);
             this.Controls.Add(this.columnaRangoPrecio);
-            this.Controls.Add(this.columnaDesde);
             this.Controls.Add(this.columnaFiltrar);
             this.Controls.Add(this.columnaID);
-            this.Controls.Add(this.columnaHasta);
             this.Controls.Add(this.columnaCodigoArticulo);
             this.Controls.Add(this.columnaNombre);
             this.Controls.Add(this.columnaDescripcion);
@@ -308,6 +326,8 @@ namespace TPWinForm_Jannello_Vaca
             this.PanelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMax)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,17 +343,17 @@ namespace TPWinForm_Jannello_Vaca
         private System.Windows.Forms.DataGridView dgvTabla;
         private System.Windows.Forms.Label ordenarPor;
         private System.Windows.Forms.ComboBox cbOrdernarPor;
-        private System.Windows.Forms.ComboBox listaMarca;
         private System.Windows.Forms.ComboBox listaCategoria;
         private System.Windows.Forms.TextBox columnaDescripcion;
         private System.Windows.Forms.TextBox columnaNombre;
         private System.Windows.Forms.TextBox columnaCodigoArticulo;
-        private System.Windows.Forms.TextBox columnaHasta;
         private System.Windows.Forms.TextBox columnaID;
         private System.Windows.Forms.Label columnaFiltrar;
-        private System.Windows.Forms.TextBox columnaDesde;
         private System.Windows.Forms.Label columnaRangoPrecio;
         private System.Windows.Forms.Button buttonAgregar;
+        private System.Windows.Forms.NumericUpDown nudMin;
+        private System.Windows.Forms.NumericUpDown nudMax;
+        private System.Windows.Forms.ComboBox listaMarca;
     }
 }
 

@@ -189,12 +189,12 @@ namespace TPWinForm_Jannello_Vaca
             0});
             this.numericUpDownPrecio.Location = new System.Drawing.Point(112, 120);
             this.numericUpDownPrecio.Maximum = new decimal(new int[] {
-            100000,
+            10000000,
             0,
             0,
             0});
             this.numericUpDownPrecio.Name = "numericUpDownPrecio";
-            this.numericUpDownPrecio.Size = new System.Drawing.Size(75, 20);
+            this.numericUpDownPrecio.Size = new System.Drawing.Size(111, 20);
             this.numericUpDownPrecio.TabIndex = 16;
             // 
             // formAgregar
