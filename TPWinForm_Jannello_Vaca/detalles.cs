@@ -133,5 +133,9 @@ namespace TPWinForm_Jannello_Vaca
             comboBoxMarca.SelectedValue = StartItemMarca;
         }
 
+        private void buttonCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

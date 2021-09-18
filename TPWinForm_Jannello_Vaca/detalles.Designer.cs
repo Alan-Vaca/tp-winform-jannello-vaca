@@ -49,6 +49,7 @@ namespace TPWinForm_Jannello_Vaca
             this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.comboBoxMarca = new System.Windows.Forms.ComboBox();
             this.textBoxURLImagen = new System.Windows.Forms.TextBox();
+            this.buttonCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -252,6 +253,18 @@ namespace TPWinForm_Jannello_Vaca
             this.textBoxURLImagen.Size = new System.Drawing.Size(355, 20);
             this.textBoxURLImagen.TabIndex = 23;
             // 
+            // buttonCerrar
+            // 
+            this.buttonCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCerrar.Location = new System.Drawing.Point(570, 330);
+            this.buttonCerrar.Name = "buttonCerrar";
+            this.buttonCerrar.Size = new System.Drawing.Size(98, 23);
+            this.buttonCerrar.TabIndex = 24;
+            this.buttonCerrar.Text = "Cerrar detalle";
+            this.buttonCerrar.UseMnemonic = false;
+            this.buttonCerrar.UseVisualStyleBackColor = true;
+            this.buttonCerrar.Click += new System.EventHandler(this.buttonCerrar_Click);
+            // 
             // detalles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -259,6 +272,7 @@ namespace TPWinForm_Jannello_Vaca
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(752, 365);
+            this.Controls.Add(this.buttonCerrar);
             this.Controls.Add(this.textBoxURLImagen);
             this.Controls.Add(this.comboBoxMarca);
             this.Controls.Add(this.comboBoxCategoria);
@@ -314,5 +328,6 @@ namespace TPWinForm_Jannello_Vaca
         private System.Windows.Forms.ComboBox comboBoxCategoria;
         private System.Windows.Forms.ComboBox comboBoxMarca;
         private System.Windows.Forms.TextBox textBoxURLImagen;
+        private System.Windows.Forms.Button buttonCerrar;
     }
 }

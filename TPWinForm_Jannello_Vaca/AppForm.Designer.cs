@@ -162,6 +162,7 @@ namespace TPWinForm_Jannello_Vaca
             this.dgvTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTabla.Size = new System.Drawing.Size(769, 195);
             this.dgvTabla.TabIndex = 1;
+            this.dgvTabla.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTabla_CellMouseDoubleClick);
             // 
             // ordenarPor
             // 

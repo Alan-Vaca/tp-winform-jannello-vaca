@@ -98,6 +98,15 @@ namespace TPWinForm_Jannello_Vaca
 
         private void BtnVerDetalle_Click(object sender, EventArgs e)
         {
+            mostrarDetalle();
+        }
+
+        private void dgvTabla_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            mostrarDetalle();
+        }
+        public void mostrarDetalle()
+        {
             Articulo art;
             art = (Articulo)dgvTabla.CurrentRow.DataBoundItem;
             detalles detalles = new detalles(art);
