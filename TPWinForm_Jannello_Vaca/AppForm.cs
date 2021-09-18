@@ -40,6 +40,10 @@ namespace TPWinForm_Jannello_Vaca
             List<Marca> marcas = marcaNegocio.listar("");
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
             List<Categoria> categorias = categoriaNegocio.listar("");
+            Categoria auxC = new Categoria(-1, "Sin Categoria");
+            categorias.Add(auxC);
+            Marca auxM = new Marca(-1, "Sin Marca");
+            marcas.Add(auxM);
             listaCategoria.DataSource = categorias;
             listaMarca.DataSource = marcas;
 
@@ -62,7 +66,7 @@ namespace TPWinForm_Jannello_Vaca
         private void reLoadTable()
         {
             cbOrdernarPor.Text = "Categoria";
-            fetchedArticulos = negocio.listar(" order by C.Id asc");
+            fetchedArticulos = negocio.listar(" order by C.Descripcion asc");
             dgvTabla.DataSource = fetchedArticulos;
 
         }
@@ -78,10 +82,10 @@ namespace TPWinForm_Jannello_Vaca
             switch (opAux)
             {
                 case "Categoria":
-                    dgvTabla.DataSource = negocio.listar(" order by C.Id asc");
+                    dgvTabla.DataSource = negocio.listar(" order by C.Descripcion asc");
                     break;
                 case "Codigo de articulo":
-                    dgvTabla.DataSource = negocio.listar(" order by A.Id asc");
+                    dgvTabla.DataSource = negocio.listar(" order by A.Codigo asc");
                     break;
                 case "Descripcion":
                     dgvTabla.DataSource = negocio.listar(" order by A.Descripcion asc");
@@ -93,7 +97,10 @@ namespace TPWinForm_Jannello_Vaca
                     dgvTabla.DataSource = negocio.listar(" order by A.Id desc");
                     break;
                 case "Marca":
-                    dgvTabla.DataSource = negocio.listar(" order by M.Id asc");
+                    dgvTabla.DataSource = negocio.listar(" order by M.Descripcion asc");
+                    break;
+                case "Nombre":
+                    dgvTabla.DataSource = negocio.listar(" order by A.Nombre asc");
                     break;
                 case "Precio ascendente":
                     dgvTabla.DataSource = negocio.listar(" order by A.Precio asc");
@@ -199,6 +206,21 @@ namespace TPWinForm_Jannello_Vaca
             dgvTabla.DataSource = fetchedArticulos;
             buttonCancelBusqueda.Visible = false;
             textBoxBuscador.Text = null;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
