@@ -26,7 +26,7 @@ namespace TPWinForm_Jannello_Vaca
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio artNegocio = new ArticuloNegocio();
-            string codigo = textBoxCodArticulo.Text;
+            int codigo = int.Parse(textBoxID.Text);
             if (artNegocio.existeEnLaDb(codigo))
             {
                 artNegocio.eliminar(codigo);

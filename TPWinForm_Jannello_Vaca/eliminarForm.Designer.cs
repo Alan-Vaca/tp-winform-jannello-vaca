@@ -31,7 +31,7 @@ namespace TPWinForm_Jannello_Vaca
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(eliminarForm));
             this.labelEliminar = new System.Windows.Forms.Label();
-            this.textBoxCodArticulo = new System.Windows.Forms.TextBox();
+            this.textBoxID = new System.Windows.Forms.TextBox();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -39,18 +39,18 @@ namespace TPWinForm_Jannello_Vaca
             // labelEliminar
             // 
             this.labelEliminar.AutoSize = true;
-            this.labelEliminar.Location = new System.Drawing.Point(17, 57);
+            this.labelEliminar.Location = new System.Drawing.Point(23, 57);
             this.labelEliminar.Name = "labelEliminar";
-            this.labelEliminar.Size = new System.Drawing.Size(233, 13);
+            this.labelEliminar.Size = new System.Drawing.Size(212, 13);
             this.labelEliminar.TabIndex = 0;
-            this.labelEliminar.Text = "Ingrese el código de artículo que desea eliminar";
+            this.labelEliminar.Text = "Ingrese el ID de artículo que desea eliminar";
             // 
-            // textBoxCodArticulo
+            // textBoxID
             // 
-            this.textBoxCodArticulo.Location = new System.Drawing.Point(79, 96);
-            this.textBoxCodArticulo.Name = "textBoxCodArticulo";
-            this.textBoxCodArticulo.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCodArticulo.TabIndex = 1;
+            this.textBoxID.Location = new System.Drawing.Point(79, 96);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(100, 20);
+            this.textBoxID.TabIndex = 1;
             // 
             // buttonAceptar
             // 
@@ -79,7 +79,7 @@ namespace TPWinForm_Jannello_Vaca
             this.ClientSize = new System.Drawing.Size(262, 215);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonAceptar);
-            this.Controls.Add(this.textBoxCodArticulo);
+            this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.labelEliminar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "eliminarForm";
@@ -92,7 +92,7 @@ namespace TPWinForm_Jannello_Vaca
         #endregion
 
         private System.Windows.Forms.Label labelEliminar;
-        private System.Windows.Forms.TextBox textBoxCodArticulo;
+        private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.Button buttonAceptar;
         private System.Windows.Forms.Button buttonCancelar;
     }

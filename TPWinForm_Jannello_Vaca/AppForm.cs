@@ -104,14 +104,16 @@ namespace TPWinForm_Jannello_Vaca
             {
                 new System.Text.StringBuilder();
                 for (int i = 0; i < selectedCellCount; i++) { fila = dgvTabla.SelectedCells[i].RowIndex; }
-                detalles.cod(dgvTabla[0, fila].Value.ToString());
-                detalles.nombre(dgvTabla[1, fila].Value.ToString());
-                detalles.descrip(dgvTabla[2, fila].Value.ToString());
-                detalles.marca(dgvTabla[3, fila].Value.ToString());
-                detalles.categ(dgvTabla[4, fila].Value.ToString());
-                detalles.imagen(dgvTabla[5, fila].Value.ToString());
-                detalles.precio(dgvTabla[6, fila].Value.ToString());
+                detalles.id(dgvTabla[0, fila].Value.ToString());
+                detalles.cod(dgvTabla[1, fila].Value.ToString());
+                detalles.nombre(dgvTabla[2, fila].Value.ToString());
+                detalles.descrip(dgvTabla[3, fila].Value.ToString());
+                detalles.marca(dgvTabla[4, fila].Value.ToString());
+                detalles.categ(dgvTabla[5, fila].Value.ToString());
+                detalles.imagen(dgvTabla[6, fila].Value.ToString());
+                detalles.precio(dgvTabla[7, fila].Value.ToString());
                 detalles.ShowDialog();
+                reLoadTable();
             }
         }
     }

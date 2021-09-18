@@ -15,16 +15,16 @@ namespace negocio
             List<Articulo> lista = new List<Articulo>();
             try
             {
-                string consulta = "Select  A.Id,A.Codigo,A.Nombre,A.Descripcion,M.Descripcion 'Marca',C.Descripcion 'Categoria'," +
-                                    "A.ImagenUrl,A.Precio, A.IdMarca, A.IdCategoria from Articulos A " +
+                string consulta = "Select  A.Id Id,A.Codigo,A.Nombre,A.Descripcion,M.Descripcion 'Marca',C.Descripcion 'Categoria'," +
+                                    "A.ImagenUrl,A.Precio, A.IdMarca IdMarca, A.IdCategoria IdCategoria from Articulos A " +
                                     "inner join Marcas M on M.Id=A.IdMarca " +
-                                    "inner join Categorias C on C.Id=A.IdCategoria " + where;
-                // Agregué a la consulta para que traiga las descripciones de las marcas y de las categorías 
+                                    "inner join Categorias C on C.Id=A.IdCategoria " + where; 
                 AccesoDatos.setearConsulta(consulta);
                 AccesoDatos.ejecutarLectura();
                 while (AccesoDatos.Lector.Read())
                 {
                     Articulo articulo = new Articulo();
+                    articulo.Id = (int)AccesoDatos.Lector["Id"];
                     if (!(AccesoDatos.Lector["Codigo"] is DBNull))    
                         articulo.CodigoArticulo = (string)AccesoDatos.Lector["Codigo"];
                     if (!(AccesoDatos.Lector["Nombre"] is DBNull))
@@ -39,7 +39,6 @@ namespace negocio
                         articulo.Marca = new Marca((int)AccesoDatos.Lector["IdMarca"], (string)AccesoDatos.Lector["Marca"]);
                     if (!(AccesoDatos.Lector["Categoria"] is DBNull))
                         articulo.Categoria = new Categoria((int)AccesoDatos.Lector["IdCategoria"], (string)AccesoDatos.Lector["Categoria"]);
-                    // Agrego en los constructores las descripciones, así nos ahorramos el foreach de getDescripciones
                     lista.Add(articulo);
                 }
             }
@@ -51,10 +50,8 @@ namespace negocio
             {
                 AccesoDatos.cerrarConexion();
             }
-         // Borré el foreach porque hacía una iteración innecesaria, podemos traer directamente en la misma consulta todo
             return lista;
         }
-        // Estos métodos no hacen falta, podemos traer directamente lo que necesitamos en la consulta y despues agregarlo en el constructor
         public string obtenerDescripcionM(int _id)
         {
             string consulta = "Select * from MARCAS where ID =" + _id;
@@ -85,8 +82,6 @@ namespace negocio
         {
             string consulta = "Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio)values(" +
                 $"'{art.CodigoArticulo}', '{art.Nombre}', '{art.Descripcion}', {art.Marca.Id}, {art.Categoria.Id}, '{art.URLimagen}', {art.Precio})";
-            // Puse string template para hacerlo más prolijo
-            
             try
             {
                AccesoDatos.setearConsulta(consulta);
@@ -97,14 +92,19 @@ namespace negocio
                 throw ex;
             }
         }
-        public bool existeEnLaDb(string codigo)
+        public bool existeEnLaDb(int id)
         {
-            List<Articulo> articulos = this.listar($"Where Codigo='{codigo}'");
+            List<Articulo> articulos = this.listar($"Where A.Id='{id}'");
             return articulos.Count >= 1;
         }
-        public void eliminar(string codigo)
+        public bool chequearCodArticuloEnDb(string cod)
         {
-            string consulta = $"Delete from ARTICULOS where Codigo='{codigo}'";
+            List<Articulo> articulos = this.listar($"Where Codigo='{cod}'");
+            return articulos.Count >= 1;
+        }
+        public void eliminar(int id)
+        {
+            string consulta = $"Delete from ARTICULOS where Id='{id}'";
             try
             {
                 AccesoDatos.setearConsulta(consulta);

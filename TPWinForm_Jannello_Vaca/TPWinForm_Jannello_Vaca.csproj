@@ -78,6 +78,9 @@
     <EmbeddedResource Include="AppForm.resx">
       <DependentUpon>AppForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="detalles.resx">
+      <DependentUpon>detalles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="eliminarForm.resx">
       <DependentUpon>eliminarForm.cs</DependentUpon>
     </EmbeddedResource>

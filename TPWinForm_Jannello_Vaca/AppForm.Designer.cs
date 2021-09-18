@@ -150,15 +150,13 @@ namespace TPWinForm_Jannello_Vaca
             // 
             this.dgvTabla.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTabla.Location = new System.Drawing.Point(137, 153);
             this.dgvTabla.Location = new System.Drawing.Point(183, 188);
             this.dgvTabla.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTabla.MultiSelect = false;
             this.dgvTabla.Name = "dgvTabla";
+            this.dgvTabla.ReadOnly = true;
             this.dgvTabla.RowHeadersWidth = 51;
             this.dgvTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTabla.Size = new System.Drawing.Size(854, 255);
-            this.dgvTabla.TabIndex = 0;
             this.dgvTabla.Size = new System.Drawing.Size(1139, 314);
             this.dgvTabla.TabIndex = 1;
             this.dgvTabla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListar_CellClick);
@@ -177,7 +175,7 @@ namespace TPWinForm_Jannello_Vaca
             this.cbOrdernarPor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOrdernarPor.FormattingEnabled = true;
             this.cbOrdernarPor.Location = new System.Drawing.Point(254, 53);
-            this.cbOrdernarPor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbOrdernarPor.Margin = new System.Windows.Forms.Padding(2);
             this.cbOrdernarPor.Name = "cbOrdernarPor";
             this.cbOrdernarPor.Size = new System.Drawing.Size(119, 21);
             this.cbOrdernarPor.TabIndex = 3;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using negocio;
 
 namespace TPWinForm_Jannello_Vaca
 {
@@ -36,5 +37,19 @@ namespace TPWinForm_Jannello_Vaca
             }
         }
         public void precio(string precio) { textBoxPrecioDetalles.Text = precio; }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio artNegocio = new ArticuloNegocio();
+            int codigo = int.Parse(textBoxIdDetalles.Text);
+            artNegocio.eliminar(codigo);
+            MessageBox.Show("¡Eliminado con éxito!");
+            Close();
+        }
+
+        private void textBoxIdDetalles_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
