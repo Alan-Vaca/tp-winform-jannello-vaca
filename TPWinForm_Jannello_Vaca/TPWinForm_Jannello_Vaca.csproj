@@ -55,6 +55,12 @@
     <Compile Include="AppForm.Designer.cs">
       <DependentUpon>AppForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="detalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="detalles.Designer.cs">
+      <DependentUpon>detalles.cs</DependentUpon>
+    </Compile>
     <Compile Include="eliminarForm.cs">
       <SubType>Form</SubType>
     </Compile>

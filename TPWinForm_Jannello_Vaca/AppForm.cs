@@ -15,6 +15,8 @@ namespace TPWinForm_Jannello_Vaca
     public partial class AppForm : Form
     {
         ArticuloNegocio negocio = new ArticuloNegocio();
+        detalles detalles = new detalles();
+
 
         public AppForm()
         {
@@ -92,6 +94,24 @@ namespace TPWinForm_Jannello_Vaca
                 case "Precio descendente":
                     dgvTabla.DataSource = negocio.listar(" order by A.Precio desc");
                     break;
+            }
+        }
+        private void dataGridViewListar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Int32 selectedCellCount = dgvTabla.GetCellCount(DataGridViewElementStates.Selected);
+            int fila = -1;
+            if (selectedCellCount > 0)
+            {
+                new System.Text.StringBuilder();
+                for (int i = 0; i < selectedCellCount; i++) { fila = dgvTabla.SelectedCells[i].RowIndex; }
+                detalles.cod(dgvTabla[0, fila].Value.ToString());
+                detalles.nombre(dgvTabla[1, fila].Value.ToString());
+                detalles.descrip(dgvTabla[2, fila].Value.ToString());
+                detalles.marca(dgvTabla[3, fila].Value.ToString());
+                detalles.categ(dgvTabla[4, fila].Value.ToString());
+                detalles.imagen(dgvTabla[5, fila].Value.ToString());
+                detalles.precio(dgvTabla[6, fila].Value.ToString());
+                detalles.ShowDialog();
             }
         }
     }

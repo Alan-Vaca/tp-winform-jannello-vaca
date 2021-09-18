@@ -64,7 +64,7 @@ namespace TPWinForm_Jannello_Vaca
             this.PanelMenu.Controls.Add(this.logoImg);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
-            this.PanelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PanelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(183, 502);
             this.PanelMenu.TabIndex = 0;
@@ -139,7 +139,7 @@ namespace TPWinForm_Jannello_Vaca
             this.logoImg.Image = ((System.Drawing.Image)(resources.GetObject("logoImg.Image")));
             this.logoImg.InitialImage = ((System.Drawing.Image)(resources.GetObject("logoImg.InitialImage")));
             this.logoImg.Location = new System.Drawing.Point(0, 0);
-            this.logoImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.logoImg.Margin = new System.Windows.Forms.Padding(4);
             this.logoImg.Name = "logoImg";
             this.logoImg.Size = new System.Drawing.Size(183, 145);
             this.logoImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -150,13 +150,14 @@ namespace TPWinForm_Jannello_Vaca
             // 
             this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTabla.Location = new System.Drawing.Point(183, 188);
-            this.dgvTabla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvTabla.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTabla.MultiSelect = false;
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.RowHeadersWidth = 51;
             this.dgvTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTabla.Size = new System.Drawing.Size(1139, 314);
             this.dgvTabla.TabIndex = 1;
+            this.dgvTabla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListar_CellClick);
             // 
             // ordenarPor
             // 
@@ -293,7 +294,7 @@ namespace TPWinForm_Jannello_Vaca
             this.Controls.Add(this.dgvTabla);
             this.Controls.Add(this.PanelMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AppForm";
             this.Text = "Trabajo Práctico WinForms";
             this.Load += new System.EventHandler(this.AppForm_Load);
