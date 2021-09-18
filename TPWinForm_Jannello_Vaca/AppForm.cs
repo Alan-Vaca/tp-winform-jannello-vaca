@@ -36,6 +36,12 @@ namespace TPWinForm_Jannello_Vaca
             cbOrdernarPor.Items.Add("Nombre");
             cbOrdernarPor.Items.Add("Precio ascendente");
             cbOrdernarPor.Items.Add("Precio descendente");
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            List<Marca> marcas = marcaNegocio.listar("");
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            List<Categoria> categorias = categoriaNegocio.listar("");
+            listaCategoria.DataSource = categorias;
+            listaMarca.DataSource = marcas;
 
         }
 
@@ -173,6 +179,8 @@ namespace TPWinForm_Jannello_Vaca
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             string valorABuscar = textBoxBuscador.Text;
+            if (valorABuscar == null || valorABuscar == "")
+                return;
             List<Articulo> artEncontrado = new List<Articulo>();
             foreach (Articulo articulo in fetchedArticulos)
             {

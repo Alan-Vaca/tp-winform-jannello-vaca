@@ -48,6 +48,7 @@ namespace TPWinForm_Jannello_Vaca
             this.listaMarca = new System.Windows.Forms.ComboBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonCancelBusqueda = new System.Windows.Forms.Button();
+            this.labelFiltrar = new System.Windows.Forms.Label();
             this.PanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
@@ -188,7 +189,7 @@ namespace TPWinForm_Jannello_Vaca
             // listaCategoria
             // 
             this.listaCategoria.FormattingEnabled = true;
-            this.listaCategoria.Location = new System.Drawing.Point(686, 123);
+            this.listaCategoria.Location = new System.Drawing.Point(680, 112);
             this.listaCategoria.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.listaCategoria.Name = "listaCategoria";
             this.listaCategoria.Size = new System.Drawing.Size(89, 21);
@@ -261,10 +262,10 @@ namespace TPWinForm_Jannello_Vaca
             // listaMarca
             // 
             this.listaMarca.FormattingEnabled = true;
-            this.listaMarca.Location = new System.Drawing.Point(586, 123);
+            this.listaMarca.Location = new System.Drawing.Point(562, 112);
             this.listaMarca.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.listaMarca.Name = "listaMarca";
-            this.listaMarca.Size = new System.Drawing.Size(101, 21);
+            this.listaMarca.Size = new System.Drawing.Size(96, 21);
             this.listaMarca.TabIndex = 8;
             // 
             // buttonBuscar
@@ -294,12 +295,22 @@ namespace TPWinForm_Jannello_Vaca
             this.buttonCancelBusqueda.Visible = false;
             this.buttonCancelBusqueda.Click += new System.EventHandler(this.buttonCancelBusqueda_Click);
             // 
+            // labelFiltrar
+            // 
+            this.labelFiltrar.AutoSize = true;
+            this.labelFiltrar.Location = new System.Drawing.Point(462, 115);
+            this.labelFiltrar.Name = "labelFiltrar";
+            this.labelFiltrar.Size = new System.Drawing.Size(84, 13);
+            this.labelFiltrar.TabIndex = 22;
+            this.labelFiltrar.Text = "FILTRAR POR: ";
+            // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(993, 408);
+            this.Controls.Add(this.labelFiltrar);
             this.Controls.Add(this.buttonCancelBusqueda);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.nudMax);
@@ -348,6 +359,7 @@ namespace TPWinForm_Jannello_Vaca
         private System.Windows.Forms.ComboBox listaMarca;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.Button buttonCancelBusqueda;
+        private System.Windows.Forms.Label labelFiltrar;
     }
 }
 
