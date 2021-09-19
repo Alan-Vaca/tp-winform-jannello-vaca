@@ -14,13 +14,6 @@ namespace TPWinForm_Jannello_Vaca
 {
     public partial class AppForm : Form
     {
-        Login login = new Login();
-        //Cargar el Login
-        private void Window_Load(object sender, EventArgs e)
-        {
-            login.ShowDialog();
-            if (login.close) { this.Close(); }
-        }
 
         public bool banderaFiltroC;
         public bool banderaFiltroM;
@@ -220,22 +213,6 @@ namespace TPWinForm_Jannello_Vaca
             buttonCancelBusqueda.Visible = false;
             textBoxBuscador.Text = null;
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
 
         public void filtrarPorMarcaYCategoria(object sender, EventArgs e)
         {

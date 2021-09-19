@@ -287,7 +287,6 @@ namespace TPWinForm_Jannello_Vaca
             this.label2.Size = new System.Drawing.Size(111, 22);
             this.label2.TabIndex = 24;
             this.label2.Text = "CATEGORIA";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // groupBox1
             // 
@@ -302,7 +301,6 @@ namespace TPWinForm_Jannello_Vaca
             this.groupBox1.Size = new System.Drawing.Size(473, 81);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label3
             // 
@@ -321,7 +319,6 @@ namespace TPWinForm_Jannello_Vaca
             this.label4.Size = new System.Drawing.Size(111, 22);
             this.label4.TabIndex = 26;
             this.label4.Text = "HASTA";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // nudMax
             // 
@@ -394,7 +391,7 @@ namespace TPWinForm_Jannello_Vaca
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "AppForm";
             this.Text = "Trabajo Práctico WinForms";
-            this.Load += new System.EventHandler(this.Window_Load);
+            this.Load += new System.EventHandler(this.AppForm_Load);
             this.PanelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).EndInit();
