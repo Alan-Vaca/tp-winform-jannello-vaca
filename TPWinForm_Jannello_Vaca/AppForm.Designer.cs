@@ -30,6 +30,7 @@ namespace TPWinForm_Jannello_Vaca
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.buttonAgregar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
@@ -54,17 +55,19 @@ namespace TPWinForm_Jannello_Vaca
             this.nudMax = new System.Windows.Forms.NumericUpDown();
             this.nudMin = new System.Windows.Forms.NumericUpDown();
             this.columnaRangoPrecio = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.PanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMin)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelMenu
             // 
-            this.PanelMenu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.PanelMenu.Controls.Add(this.buttonAgregar);
             this.PanelMenu.Controls.Add(this.BtnEliminar);
             this.PanelMenu.Controls.Add(this.BtnSesion);
@@ -74,16 +77,19 @@ namespace TPWinForm_Jannello_Vaca
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
             this.PanelMenu.Margin = new System.Windows.Forms.Padding(5);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(183, 502);
+            this.PanelMenu.Size = new System.Drawing.Size(183, 464);
             this.PanelMenu.TabIndex = 0;
             // 
             // buttonAgregar
             // 
-            this.buttonAgregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.buttonAgregar.BackColor = System.Drawing.Color.Transparent;
             this.buttonAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAgregar.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.buttonAgregar.FlatAppearance.BorderSize = 0;
+            this.buttonAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAgregar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonAgregar.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonAgregar.Location = new System.Drawing.Point(1, 188);
             this.buttonAgregar.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAgregar.Name = "buttonAgregar";
@@ -95,11 +101,14 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnEliminar.BackColor = System.Drawing.Color.Transparent;
             this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEliminar.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BtnEliminar.FlatAppearance.BorderSize = 0;
+            this.BtnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnEliminar.ForeColor = System.Drawing.Color.Gainsboro;
             this.BtnEliminar.Location = new System.Drawing.Point(0, 274);
             this.BtnEliminar.Margin = new System.Windows.Forms.Padding(0);
             this.BtnEliminar.Name = "BtnEliminar";
@@ -111,12 +120,15 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // BtnSesion
             // 
-            this.BtnSesion.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnSesion.BackColor = System.Drawing.Color.Transparent;
             this.BtnSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnSesion.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BtnSesion.FlatAppearance.BorderSize = 0;
+            this.BtnSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSesion.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnSesion.Location = new System.Drawing.Point(1, 458);
+            this.BtnSesion.ForeColor = System.Drawing.Color.Gainsboro;
+            this.BtnSesion.Location = new System.Drawing.Point(2, 400);
             this.BtnSesion.Margin = new System.Windows.Forms.Padding(0);
             this.BtnSesion.Name = "BtnSesion";
             this.BtnSesion.Size = new System.Drawing.Size(180, 43);
@@ -127,12 +139,14 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // BtnVerDetalle
             // 
-            this.BtnVerDetalle.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BtnVerDetalle.BackColor = System.Drawing.Color.Transparent;
             this.BtnVerDetalle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnVerDetalle.FlatAppearance.BorderColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.BtnVerDetalle.FlatAppearance.BorderSize = 0;
+            this.BtnVerDetalle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnVerDetalle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnVerDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVerDetalle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnVerDetalle.ForeColor = System.Drawing.Color.Gainsboro;
             this.BtnVerDetalle.Location = new System.Drawing.Point(3, 231);
             this.BtnVerDetalle.Margin = new System.Windows.Forms.Padding(0);
             this.BtnVerDetalle.Name = "BtnVerDetalle";
@@ -158,6 +172,8 @@ namespace TPWinForm_Jannello_Vaca
             // dgvTabla
             // 
             this.dgvTabla.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.dgvTabla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTabla.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvTabla.Location = new System.Drawing.Point(204, 203);
@@ -167,6 +183,7 @@ namespace TPWinForm_Jannello_Vaca
             this.dgvTabla.ReadOnly = true;
             this.dgvTabla.RowHeadersVisible = false;
             this.dgvTabla.RowHeadersWidth = 51;
+            this.dgvTabla.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTabla.Size = new System.Drawing.Size(1077, 240);
             this.dgvTabla.TabIndex = 1;
@@ -174,6 +191,7 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // ordenarPor
             // 
+            this.ordenarPor.BackColor = System.Drawing.Color.Transparent;
             this.ordenarPor.Location = new System.Drawing.Point(200, 68);
             this.ordenarPor.Name = "ordenarPor";
             this.ordenarPor.Size = new System.Drawing.Size(147, 26);
@@ -194,7 +212,7 @@ namespace TPWinForm_Jannello_Vaca
             // listaCategoria
             // 
             this.listaCategoria.FormattingEnabled = true;
-            this.listaCategoria.Location = new System.Drawing.Point(1153, 143);
+            this.listaCategoria.Location = new System.Drawing.Point(345, 38);
             this.listaCategoria.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.listaCategoria.Name = "listaCategoria";
             this.listaCategoria.Size = new System.Drawing.Size(128, 24);
@@ -204,11 +222,12 @@ namespace TPWinForm_Jannello_Vaca
             // textBoxBuscador
             // 
             this.textBoxBuscador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxBuscador.Location = new System.Drawing.Point(205, 143);
+            this.textBoxBuscador.BackColor = System.Drawing.Color.White;
+            this.textBoxBuscador.Location = new System.Drawing.Point(204, 143);
             this.textBoxBuscador.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.textBoxBuscador.Multiline = true;
             this.textBoxBuscador.Name = "textBoxBuscador";
-            this.textBoxBuscador.Size = new System.Drawing.Size(216, 29);
+            this.textBoxBuscador.Size = new System.Drawing.Size(253, 29);
             this.textBoxBuscador.TabIndex = 14;
             // 
             // textLabelBuscador
@@ -224,7 +243,7 @@ namespace TPWinForm_Jannello_Vaca
             // listaMarca
             // 
             this.listaMarca.FormattingEnabled = true;
-            this.listaMarca.Location = new System.Drawing.Point(945, 143);
+            this.listaMarca.Location = new System.Drawing.Point(137, 38);
             this.listaMarca.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.listaMarca.Name = "listaMarca";
             this.listaMarca.Size = new System.Drawing.Size(136, 24);
@@ -235,7 +254,8 @@ namespace TPWinForm_Jannello_Vaca
             // 
             this.buttonBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBuscar.BackgroundImage")));
             this.buttonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonBuscar.Location = new System.Drawing.Point(449, 142);
+            this.buttonBuscar.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonBuscar.Location = new System.Drawing.Point(461, 141);
             this.buttonBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(32, 30);
@@ -249,7 +269,7 @@ namespace TPWinForm_Jannello_Vaca
             // 
             this.buttonCancelBusqueda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCancelBusqueda.BackgroundImage")));
             this.buttonCancelBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonCancelBusqueda.Location = new System.Drawing.Point(501, 142);
+            this.buttonCancelBusqueda.Location = new System.Drawing.Point(501, 141);
             this.buttonCancelBusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancelBusqueda.Name = "buttonCancelBusqueda";
             this.buttonCancelBusqueda.Size = new System.Drawing.Size(32, 30);
@@ -263,7 +283,8 @@ namespace TPWinForm_Jannello_Vaca
             // labelFiltrar
             // 
             this.labelFiltrar.AutoSize = true;
-            this.labelFiltrar.Location = new System.Drawing.Point(805, 150);
+            this.labelFiltrar.BackColor = System.Drawing.Color.Transparent;
+            this.labelFiltrar.Location = new System.Drawing.Point(7, 42);
             this.labelFiltrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFiltrar.Name = "labelFiltrar";
             this.labelFiltrar.Size = new System.Drawing.Size(107, 17);
@@ -272,7 +293,8 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(942, 119);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(134, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 22);
@@ -281,7 +303,8 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(1150, 119);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(342, 15);
             this.label2.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 22);
@@ -290,21 +313,22 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.nudMax);
             this.groupBox1.Controls.Add(this.nudMin);
             this.groupBox1.Controls.Add(this.columnaRangoPrecio);
-            this.groupBox1.Location = new System.Drawing.Point(808, 17);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox1.Location = new System.Drawing.Point(784, 17);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(473, 81);
+            this.groupBox1.Size = new System.Drawing.Size(497, 86);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(134, 6);
+            this.label3.Location = new System.Drawing.Point(134, 15);
             this.label3.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 22);
@@ -313,7 +337,7 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(342, 6);
+            this.label4.Location = new System.Drawing.Point(342, 13);
             this.label4.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 22);
@@ -360,33 +384,45 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // columnaRangoPrecio
             // 
-            this.columnaRangoPrecio.Location = new System.Drawing.Point(-3, 41);
+            this.columnaRangoPrecio.Location = new System.Drawing.Point(11, 41);
             this.columnaRangoPrecio.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.columnaRangoPrecio.Name = "columnaRangoPrecio";
-            this.columnaRangoPrecio.Size = new System.Drawing.Size(142, 22);
+            this.columnaRangoPrecio.Size = new System.Drawing.Size(107, 22);
             this.columnaRangoPrecio.TabIndex = 17;
             this.columnaRangoPrecio.Text = "PRECIO";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.groupBox2.Controls.Add(this.labelFiltrar);
+            this.groupBox2.Controls.Add(this.listaMarca);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.listaCategoria);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox2.Location = new System.Drawing.Point(784, 109);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(497, 86);
+            this.groupBox2.TabIndex = 28;
+            this.groupBox2.TabStop = false;
             // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1324, 502);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.ClientSize = new System.Drawing.Size(1303, 464);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.labelFiltrar);
             this.Controls.Add(this.buttonCancelBusqueda);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.textLabelBuscador);
             this.Controls.Add(this.textBoxBuscador);
-            this.Controls.Add(this.listaCategoria);
-            this.Controls.Add(this.listaMarca);
             this.Controls.Add(this.cbOrdernarPor);
             this.Controls.Add(this.ordenarPor);
             this.Controls.Add(this.dgvTabla);
             this.Controls.Add(this.PanelMenu);
+            this.ForeColor = System.Drawing.Color.Gainsboro;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "AppForm";
@@ -398,6 +434,8 @@ namespace TPWinForm_Jannello_Vaca
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMin)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,6 +467,7 @@ namespace TPWinForm_Jannello_Vaca
         private System.Windows.Forms.NumericUpDown nudMax;
         private System.Windows.Forms.NumericUpDown nudMin;
         private System.Windows.Forms.Label columnaRangoPrecio;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

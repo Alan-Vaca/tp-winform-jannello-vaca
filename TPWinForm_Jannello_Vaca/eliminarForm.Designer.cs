@@ -39,24 +39,28 @@ namespace TPWinForm_Jannello_Vaca
             // labelEliminar
             // 
             this.labelEliminar.AutoSize = true;
-            this.labelEliminar.Location = new System.Drawing.Point(23, 57);
+            this.labelEliminar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelEliminar.Location = new System.Drawing.Point(31, 70);
+            this.labelEliminar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEliminar.Name = "labelEliminar";
-            this.labelEliminar.Size = new System.Drawing.Size(212, 13);
+            this.labelEliminar.Size = new System.Drawing.Size(281, 17);
             this.labelEliminar.TabIndex = 0;
             this.labelEliminar.Text = "Ingrese el ID de artículo que desea eliminar";
             // 
             // textBoxID
             // 
-            this.textBoxID.Location = new System.Drawing.Point(79, 96);
+            this.textBoxID.Location = new System.Drawing.Point(105, 118);
+            this.textBoxID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(100, 20);
+            this.textBoxID.Size = new System.Drawing.Size(132, 22);
             this.textBoxID.TabIndex = 1;
             // 
             // buttonAceptar
             // 
-            this.buttonAceptar.Location = new System.Drawing.Point(41, 154);
+            this.buttonAceptar.Location = new System.Drawing.Point(55, 190);
+            this.buttonAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAceptar.Name = "buttonAceptar";
-            this.buttonAceptar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAceptar.Size = new System.Drawing.Size(100, 28);
             this.buttonAceptar.TabIndex = 2;
             this.buttonAceptar.Text = "Aceptar";
             this.buttonAceptar.UseVisualStyleBackColor = true;
@@ -64,9 +68,10 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(146, 154);
+            this.buttonCancelar.Location = new System.Drawing.Point(195, 190);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelar.Size = new System.Drawing.Size(100, 28);
             this.buttonCancelar.TabIndex = 3;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
@@ -74,14 +79,16 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // eliminarForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(262, 215);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.ClientSize = new System.Drawing.Size(349, 265);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonAceptar);
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.labelEliminar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "eliminarForm";
             this.Text = "Eliminar un artículo";
             this.ResumeLayout(false);
