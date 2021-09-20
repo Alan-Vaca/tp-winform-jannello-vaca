@@ -57,11 +57,20 @@ namespace TPWinForm_Jannello_Vaca
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            ArticuloNegocio artNegocio = new ArticuloNegocio();
-            int codigo = int.Parse(textBoxIdDetalles.Text);
-            artNegocio.eliminar(codigo);
-            MessageBox.Show("¡Eliminado con éxito!");
-            Close();
+            DialogResult dialogResult = MessageBox.Show("¿Está seguro que desea eliminar este artículo?", "Advertencia", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                ArticuloNegocio artNegocio = new ArticuloNegocio();
+                int codigo = int.Parse(textBoxIdDetalles.Text);
+                artNegocio.eliminar(codigo);
+                MessageBox.Show("¡Eliminado con éxito!");
+                Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                MessageBox.Show("¡Se ha cancelado la operación");
+                buttonCancelar_Click(sender, e);
+            }
         }
 
         private void buttonModificar_Click(object sender, EventArgs e)
@@ -81,37 +90,50 @@ namespace TPWinForm_Jannello_Vaca
             }
             else
             {
-                ArticuloNegocio negocioArt = new ArticuloNegocio();
-                Articulo art = new Articulo();
-                buttonEliminar.Visible = true;
-                buttonModificar.Text = "Modificar";
-                buttonCancelar.Visible = false;
-                buttonCancelar.Visible = false;
-                comboBoxMarca.Enabled = false;
-                textBoxCodDetalles.Enabled = false;
-                textBoxDescripcionDetalles.Enabled = false;
-                comboBoxCategoria.Enabled = false;
-                textBoxNombreDetalles.Enabled = false;
-                textBoxPrecioDetalles.Enabled = false;
-                textBoxURLImagen.Enabled = false;
-                StartItemMarca = (int)comboBoxMarca.SelectedValue;
-                StartItemCategoria = (int)comboBoxCategoria.SelectedValue;
-                art.Nombre = textBoxNombreDetalles.Text;
-                art.CodigoArticulo = textBoxCodDetalles.Text;
-                art.Descripcion = textBoxDescripcionDetalles.Text;
-                art.URLimagen = textBoxURLImagen.Text;
-                art.Marca = (Marca)comboBoxMarca.SelectedItem;
-                art.Categoria = (Categoria)comboBoxCategoria.SelectedItem;
-                art.Precio = decimal.Parse(textBoxPrecioDetalles.Text);
-                art.Id = int.Parse(textBoxIdDetalles.Text);
-                negocioArt.modificar(art);
-                imagen(art.URLimagen);
+                DialogResult dialogResult = MessageBox.Show("¿Está seguro que desea modificar?", "Advertencia", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    ArticuloNegocio negocioArt = new ArticuloNegocio();
+                    Articulo art = new Articulo();
+                    buttonEliminar.Visible = true;
+                    buttonModificar.Text = "Modificar";
+                    buttonCancelar.Visible = false;
+                    buttonCancelar.Visible = false;
+                    comboBoxMarca.Enabled = false;
+                    textBoxCodDetalles.Enabled = false;
+                    textBoxDescripcionDetalles.Enabled = false;
+                    comboBoxCategoria.Enabled = false;
+                    textBoxNombreDetalles.Enabled = false;
+                    textBoxPrecioDetalles.Enabled = false;
+                    textBoxURLImagen.Enabled = false;
+                    StartItemMarca = (int)comboBoxMarca.SelectedValue;
+                    StartItemCategoria = (int)comboBoxCategoria.SelectedValue;
+                    art.Nombre = textBoxNombreDetalles.Text;
+                    art.CodigoArticulo = textBoxCodDetalles.Text;
+                    art.Descripcion = textBoxDescripcionDetalles.Text;
+                    art.URLimagen = textBoxURLImagen.Text;
+                    art.Marca = (Marca)comboBoxMarca.SelectedItem;
+                    art.Categoria = (Categoria)comboBoxCategoria.SelectedItem;
+                    art.Precio = decimal.Parse(textBoxPrecioDetalles.Text);
+                    art.Id = int.Parse(textBoxIdDetalles.Text);
+                    negocioArt.modificar(art);
+                    imagen(art.URLimagen);
+                    MessageBox.Show("¡Los cambios fueron aplicados");
+                    buttonCancelar_Click(sender, e);
+
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("¡Se ha cancelado la operación");
+                    buttonCancelar_Click(sender, e);
+                }
             }
             Modificando = !Modificando;
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
+            buttonEliminar.Visible = true;
             buttonModificar.Text = "Modificar";
             buttonCancelar.Visible = false;
             comboBoxCategoria.Enabled = false;

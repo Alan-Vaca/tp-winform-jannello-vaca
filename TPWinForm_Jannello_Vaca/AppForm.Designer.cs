@@ -30,7 +30,7 @@ namespace TPWinForm_Jannello_Vaca
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.buttonAgregar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
@@ -56,6 +56,7 @@ namespace TPWinForm_Jannello_Vaca
             this.nudMin = new System.Windows.Forms.NumericUpDown();
             this.columnaRangoPrecio = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.PanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
@@ -77,7 +78,7 @@ namespace TPWinForm_Jannello_Vaca
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
             this.PanelMenu.Margin = new System.Windows.Forms.Padding(5);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(183, 464);
+            this.PanelMenu.Size = new System.Drawing.Size(229, 464);
             this.PanelMenu.TabIndex = 0;
             // 
             // buttonAgregar
@@ -90,10 +91,10 @@ namespace TPWinForm_Jannello_Vaca
             this.buttonAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAgregar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonAgregar.Location = new System.Drawing.Point(1, 188);
+            this.buttonAgregar.Location = new System.Drawing.Point(1, 203);
             this.buttonAgregar.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(180, 43);
+            this.buttonAgregar.Size = new System.Drawing.Size(228, 43);
             this.buttonAgregar.TabIndex = 6;
             this.buttonAgregar.Text = "Agregar artículo";
             this.buttonAgregar.UseVisualStyleBackColor = false;
@@ -109,10 +110,10 @@ namespace TPWinForm_Jannello_Vaca
             this.BtnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnEliminar.Location = new System.Drawing.Point(0, 274);
+            this.BtnEliminar.Location = new System.Drawing.Point(0, 289);
             this.BtnEliminar.Margin = new System.Windows.Forms.Padding(0);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(181, 43);
+            this.BtnEliminar.Size = new System.Drawing.Size(235, 43);
             this.BtnEliminar.TabIndex = 5;
             this.BtnEliminar.Text = "Eliminar artículo por ID";
             this.BtnEliminar.UseVisualStyleBackColor = false;
@@ -131,7 +132,7 @@ namespace TPWinForm_Jannello_Vaca
             this.BtnSesion.Location = new System.Drawing.Point(2, 400);
             this.BtnSesion.Margin = new System.Windows.Forms.Padding(0);
             this.BtnSesion.Name = "BtnSesion";
-            this.BtnSesion.Size = new System.Drawing.Size(180, 43);
+            this.BtnSesion.Size = new System.Drawing.Size(227, 43);
             this.BtnSesion.TabIndex = 4;
             this.BtnSesion.Text = "Cerrar";
             this.BtnSesion.UseVisualStyleBackColor = false;
@@ -147,10 +148,10 @@ namespace TPWinForm_Jannello_Vaca
             this.BtnVerDetalle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnVerDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVerDetalle.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnVerDetalle.Location = new System.Drawing.Point(3, 231);
+            this.BtnVerDetalle.Location = new System.Drawing.Point(3, 246);
             this.BtnVerDetalle.Margin = new System.Windows.Forms.Padding(0);
             this.BtnVerDetalle.Name = "BtnVerDetalle";
-            this.BtnVerDetalle.Size = new System.Drawing.Size(179, 43);
+            this.BtnVerDetalle.Size = new System.Drawing.Size(226, 43);
             this.BtnVerDetalle.TabIndex = 2;
             this.BtnVerDetalle.Text = "Ver Detalle";
             this.BtnVerDetalle.UseVisualStyleBackColor = false;
@@ -164,7 +165,7 @@ namespace TPWinForm_Jannello_Vaca
             this.logoImg.Location = new System.Drawing.Point(0, 0);
             this.logoImg.Margin = new System.Windows.Forms.Padding(5);
             this.logoImg.Name = "logoImg";
-            this.logoImg.Size = new System.Drawing.Size(183, 145);
+            this.logoImg.Size = new System.Drawing.Size(229, 171);
             this.logoImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoImg.TabIndex = 0;
             this.logoImg.TabStop = false;
@@ -172,11 +173,11 @@ namespace TPWinForm_Jannello_Vaca
             // dgvTabla
             // 
             this.dgvTabla.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dgvTabla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dgvTabla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTabla.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvTabla.Location = new System.Drawing.Point(204, 203);
+            this.dgvTabla.Location = new System.Drawing.Point(240, 203);
             this.dgvTabla.Margin = new System.Windows.Forms.Padding(5);
             this.dgvTabla.MultiSelect = false;
             this.dgvTabla.Name = "dgvTabla";
@@ -185,16 +186,16 @@ namespace TPWinForm_Jannello_Vaca
             this.dgvTabla.RowHeadersWidth = 51;
             this.dgvTabla.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTabla.Size = new System.Drawing.Size(1077, 240);
+            this.dgvTabla.Size = new System.Drawing.Size(1041, 240);
             this.dgvTabla.TabIndex = 1;
             this.dgvTabla.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTabla_CellMouseDoubleClick);
             // 
             // ordenarPor
             // 
             this.ordenarPor.BackColor = System.Drawing.Color.Transparent;
-            this.ordenarPor.Location = new System.Drawing.Point(200, 68);
+            this.ordenarPor.Location = new System.Drawing.Point(237, 71);
             this.ordenarPor.Name = "ordenarPor";
-            this.ordenarPor.Size = new System.Drawing.Size(147, 26);
+            this.ordenarPor.Size = new System.Drawing.Size(134, 26);
             this.ordenarPor.TabIndex = 2;
             this.ordenarPor.Text = "ORDERNAR POR :";
             // 
@@ -202,7 +203,7 @@ namespace TPWinForm_Jannello_Vaca
             // 
             this.cbOrdernarPor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOrdernarPor.FormattingEnabled = true;
-            this.cbOrdernarPor.Location = new System.Drawing.Point(339, 65);
+            this.cbOrdernarPor.Location = new System.Drawing.Point(374, 68);
             this.cbOrdernarPor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbOrdernarPor.Name = "cbOrdernarPor";
             this.cbOrdernarPor.Size = new System.Drawing.Size(194, 24);
@@ -223,7 +224,7 @@ namespace TPWinForm_Jannello_Vaca
             // 
             this.textBoxBuscador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxBuscador.BackColor = System.Drawing.Color.White;
-            this.textBoxBuscador.Location = new System.Drawing.Point(204, 143);
+            this.textBoxBuscador.Location = new System.Drawing.Point(240, 142);
             this.textBoxBuscador.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.textBoxBuscador.Multiline = true;
             this.textBoxBuscador.Name = "textBoxBuscador";
@@ -233,7 +234,7 @@ namespace TPWinForm_Jannello_Vaca
             // textLabelBuscador
             // 
             this.textLabelBuscador.BackColor = System.Drawing.Color.Transparent;
-            this.textLabelBuscador.Location = new System.Drawing.Point(200, 119);
+            this.textLabelBuscador.Location = new System.Drawing.Point(234, 118);
             this.textLabelBuscador.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.textLabelBuscador.Name = "textLabelBuscador";
             this.textLabelBuscador.Size = new System.Drawing.Size(417, 22);
@@ -255,7 +256,7 @@ namespace TPWinForm_Jannello_Vaca
             this.buttonBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBuscar.BackgroundImage")));
             this.buttonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonBuscar.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonBuscar.Location = new System.Drawing.Point(461, 141);
+            this.buttonBuscar.Location = new System.Drawing.Point(496, 141);
             this.buttonBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(32, 30);
@@ -269,7 +270,7 @@ namespace TPWinForm_Jannello_Vaca
             // 
             this.buttonCancelBusqueda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCancelBusqueda.BackgroundImage")));
             this.buttonCancelBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonCancelBusqueda.Location = new System.Drawing.Point(501, 141);
+            this.buttonCancelBusqueda.Location = new System.Drawing.Point(536, 141);
             this.buttonCancelBusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancelBusqueda.Name = "buttonCancelBusqueda";
             this.buttonCancelBusqueda.Size = new System.Drawing.Size(32, 30);
@@ -406,12 +407,24 @@ namespace TPWinForm_Jannello_Vaca
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(237, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(180, 25);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "JANNELLO-VACA";
+            // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.ClientSize = new System.Drawing.Size(1303, 464);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonCancelBusqueda);
@@ -425,6 +438,9 @@ namespace TPWinForm_Jannello_Vaca
             this.ForeColor = System.Drawing.Color.Gainsboro;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1321, 511);
+            this.MinimumSize = new System.Drawing.Size(1321, 511);
             this.Name = "AppForm";
             this.Text = "Trabajo Práctico WinForms";
             this.Load += new System.EventHandler(this.AppForm_Load);
@@ -468,6 +484,7 @@ namespace TPWinForm_Jannello_Vaca
         private System.Windows.Forms.NumericUpDown nudMin;
         private System.Windows.Forms.Label columnaRangoPrecio;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label5;
     }
 }
 
