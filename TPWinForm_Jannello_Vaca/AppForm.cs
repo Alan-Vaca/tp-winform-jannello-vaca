@@ -82,41 +82,6 @@ namespace TPWinForm_Jannello_Vaca
             Close();
         }
 
-        private void cbOrdernarPor_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            string opAux = cbOrdernarPor.Text;
-            switch (opAux)
-            {
-                case "Categoria":
-                    dgvTabla.DataSource = negocio.listar(" order by C.Descripcion asc");
-                    break;
-                case "Codigo de articulo":
-                    dgvTabla.DataSource = negocio.listar(" order by A.Codigo asc");
-                    break;
-                case "Descripcion":
-                    dgvTabla.DataSource = negocio.listar(" order by A.Descripcion asc");
-                    break;
-                case "Mas antiguo":
-                    dgvTabla.DataSource = negocio.listar(" order by A.Id asc");
-                    break;
-                case "Mas reciente":
-                    dgvTabla.DataSource = negocio.listar(" order by A.Id desc");
-                    break;
-                case "Marca":
-                    dgvTabla.DataSource = negocio.listar(" order by M.Descripcion asc");
-                    break;
-                case "Nombre":
-                    dgvTabla.DataSource = negocio.listar(" order by A.Nombre asc");
-                    break;
-                case "Precio ascendente":
-                    dgvTabla.DataSource = negocio.listar(" order by A.Precio asc");
-                    break;
-                case "Precio descendente":
-                    dgvTabla.DataSource = negocio.listar(" order by A.Precio desc");
-                    break;
-            }
-        }
-
         private void BtnVerDetalle_Click(object sender, EventArgs e)
         {
             mostrarDetalle();
@@ -135,89 +100,49 @@ namespace TPWinForm_Jannello_Vaca
             reLoadTable();
         }
 
-        public void filtrarPorPrecio()
-        {
-            if (nudMin.Value == 0 && nudMax.Value == 0) {
-                dgvTabla.DataSource = fetchedArticulos;
-                return; // Si estan los dos vacíos no va a hacer nada
-            }
-            decimal max = nudMax.Value;
-            decimal min = nudMin.Value;
-            List<Articulo> articulos = fetchedArticulos;
-            List<Articulo> filtrado = new List<Articulo>();
-            foreach (Articulo articulo in articulos)
-            {
-                bool estaEnIntervalo = checkSiEstaEnIntervalo(max, min, articulo.Precio);
-                if (estaEnIntervalo)
-                    filtrado.Add(articulo);
-            }
-            dgvTabla.DataSource = filtrado;
-        }
-        public bool checkSiEstaEnIntervalo(decimal max, decimal min, decimal precio)
-        {
-            if (max != 0 && min != 0)
-            {
-                if (precio >= min && precio <= max)
-                    return true;
-                else return false;
-            } else if (max != 0)
-            {
-                if (precio <= max)
-                    return true;
-                else return false;
-            } else
-            {
-                if (precio >= min)
-                    return true;
-                else return false;
-            }
-        }
-
-        private void nudMin_ValueChanged(object sender, EventArgs e)
-        {
-            filtrarPorPrecio();
-        }
-
-        private void nudMax_ValueChanged(object sender, EventArgs e)
-        {
-            filtrarPorPrecio();
-        }
-
-        private void resetFiltroPrecio()
-        {
-            nudMax.Value = 0;
-            nudMax.Value = 0;
-        }
-
-        private void buttonBuscar_Click(object sender, EventArgs e)
-        {
-            string valorABuscar = textBoxBuscador.Text;
-            if (valorABuscar == null || valorABuscar == "")
-                return;
-            List<Articulo> artEncontrado = new List<Articulo>();
-            foreach (Articulo articulo in fetchedArticulos)
-            {
-                if (articulo.CodigoArticulo.Contains(valorABuscar) || articulo.Nombre.Contains(valorABuscar) || articulo.Descripcion.Contains(valorABuscar))
-                {
-                    artEncontrado.Add(articulo);
-                }
-            }
-            resetFiltroPrecio();
-            dgvTabla.DataSource = artEncontrado;
-            buttonCancelBusqueda.Visible = true;
-        }
-
         private void buttonCancelBusqueda_Click(object sender, EventArgs e)
         {
-            dgvTabla.DataSource = fetchedArticulos;
             buttonCancelBusqueda.Visible = false;
             textBoxBuscador.Text = null;
+            ConsultaFiltroGeneral(sender, e);
         }
 
-        public void filtrarPorMarcaYCategoria(object sender, EventArgs e)
+        public string FiltrarPorPrecio()
         {
-            if(banderaFiltroC && banderaFiltroM)
+            string filtrarPorPrecio = "";
+            int minimo = int.Parse(nudMin.Value.ToString());
+            int maximo = int.Parse(nudMax.Value.ToString());
+
+            if(minimo != 0 && maximo != 0 || maximo > minimo)
             {
+            filtrarPorPrecio = " PRECIO BETWEEN " + minimo.ToString() + " AND " + maximo.ToString();
+            }
+            else if(minimo != 0 && maximo == 0)
+            {
+                filtrarPorPrecio = " PRECIO >=" + minimo.ToString();
+            }
+            else
+            {
+                filtrarPorPrecio = " PRECIO >= 0";
+            }
+            return filtrarPorPrecio;
+        }
+
+        public string buttonBuscar_Click()
+        {
+            string resultadoBtnBuscar = "";
+            string valorABuscar = textBoxBuscador.Text;
+            if (valorABuscar != "")
+            {
+                resultadoBtnBuscar = " AND ( A.CODIGO LIKE '%" + valorABuscar + "%' OR A.NOMBRE LIKE '%" + valorABuscar + "%' OR A.DESCRIPCION LIKE '%" + valorABuscar + "%')";
+                buttonCancelBusqueda.Visible = true;
+            }
+            return resultadoBtnBuscar;
+        }
+
+        public string filtrarPorMarcaYCategoria()
+        {
+            string marcaYCategoria = "";
                 int selectMarca = listaMarca.SelectedIndex;
                 int selectCategoria = listaCategoria.SelectedIndex;
                 int cantMarca = listaMarca.Items.Count;
@@ -226,30 +151,64 @@ namespace TPWinForm_Jannello_Vaca
                 selectCategoria++;
                  if (cantMarca != selectMarca && cantCat != selectCategoria)
                 {
-                 dgvTabla.DataSource = negocio.listar(" where M.Id=" + selectMarca + " and C.Id=" + selectCategoria);
+                marcaYCategoria = " AND M.Id=" + selectMarca + " and C.Id=" + selectCategoria;
                 }
                 else if(cantMarca != selectMarca && cantCat == selectCategoria)
                 {
-                    dgvTabla.DataSource = negocio.listar(" where M.Id=" + selectMarca);
+                marcaYCategoria = "AND M.Id=" + selectMarca;
                 }
                 else if(cantCat != selectCategoria && cantMarca == selectMarca)
                 {
-                    dgvTabla.DataSource = negocio.listar(" where C.Id=" + selectCategoria );
+                marcaYCategoria = "AND C.Id=" + selectCategoria;
                 }
-                else
-                {
-                    dgvTabla.DataSource = negocio.listar("");
-                    cbOrdernarPor_SelectionChangeCommitted( sender, e);
-                }
-            }
-            else if (banderaFiltroM)
+            return marcaYCategoria;
+        }
+
+        public string cbOrdernarPor_SelectionChangeCommitted()
+        {
+            string opAux = cbOrdernarPor.Text;
+            string opcion = "";
+            switch (opAux)
             {
-                banderaFiltroC = true;
+                case "Categoria":
+                    opcion = " order by C.Descripcion asc";
+                    break;
+                case "Codigo de articulo":
+                    opcion = " order by A.Codigo asc";
+                    break;
+                case "Descripcion":
+                    opcion = " order by A.Descripcion asc";
+                    break;
+                case "Mas antiguo":
+                    opcion = " order by A.Id asc";
+                    break;
+                case "Mas reciente":
+                    opcion = " order by A.Id desc";
+                    break;
+                case "Marca":
+                    opcion = " order by M.Descripcion asc";
+                    break;
+                case "Nombre":
+                    opcion = " order by A.Nombre asc";
+                    break;
+                case "Precio ascendente":
+                    opcion = " order by A.Precio asc";
+                    break;
+                case "Precio descendente":
+                    opcion = " order by A.Precio desc";
+                    break;
             }
-            else
-            {
-                banderaFiltroM = true;
-            }
+            return opcion;
+        }
+
+        public void ConsultaFiltroGeneral(object sender, EventArgs e)
+        {
+            string condicionPrecio = FiltrarPorPrecio();
+            string condicionBuscar = buttonBuscar_Click();
+            string condicionMarcaYCategoria = filtrarPorMarcaYCategoria();
+            string condicionOrdenar = cbOrdernarPor_SelectionChangeCommitted();
+
+            dgvTabla.DataSource = negocio.listar(" WHERE" + condicionPrecio + condicionBuscar + condicionMarcaYCategoria + condicionOrdenar);
         }
 
     }

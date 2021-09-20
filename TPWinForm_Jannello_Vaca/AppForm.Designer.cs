@@ -30,7 +30,7 @@ namespace TPWinForm_Jannello_Vaca
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.buttonAgregar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
@@ -172,8 +172,8 @@ namespace TPWinForm_Jannello_Vaca
             // dgvTabla
             // 
             this.dgvTabla.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            this.dgvTabla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dgvTabla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTabla.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvTabla.Location = new System.Drawing.Point(204, 203);
@@ -207,7 +207,7 @@ namespace TPWinForm_Jannello_Vaca
             this.cbOrdernarPor.Name = "cbOrdernarPor";
             this.cbOrdernarPor.Size = new System.Drawing.Size(194, 24);
             this.cbOrdernarPor.TabIndex = 3;
-            this.cbOrdernarPor.SelectionChangeCommitted += new System.EventHandler(this.cbOrdernarPor_SelectionChangeCommitted);
+            this.cbOrdernarPor.SelectionChangeCommitted += new System.EventHandler(this.ConsultaFiltroGeneral);
             // 
             // listaCategoria
             // 
@@ -217,7 +217,7 @@ namespace TPWinForm_Jannello_Vaca
             this.listaCategoria.Name = "listaCategoria";
             this.listaCategoria.Size = new System.Drawing.Size(128, 24);
             this.listaCategoria.TabIndex = 9;
-            this.listaCategoria.SelectedIndexChanged += new System.EventHandler(this.filtrarPorMarcaYCategoria);
+            this.listaCategoria.SelectionChangeCommitted += new System.EventHandler(this.ConsultaFiltroGeneral);
             // 
             // textBoxBuscador
             // 
@@ -248,7 +248,7 @@ namespace TPWinForm_Jannello_Vaca
             this.listaMarca.Name = "listaMarca";
             this.listaMarca.Size = new System.Drawing.Size(136, 24);
             this.listaMarca.TabIndex = 8;
-            this.listaMarca.SelectedIndexChanged += new System.EventHandler(this.filtrarPorMarcaYCategoria);
+            this.listaMarca.SelectionChangeCommitted += new System.EventHandler(this.ConsultaFiltroGeneral);
             // 
             // buttonBuscar
             // 
@@ -263,7 +263,7 @@ namespace TPWinForm_Jannello_Vaca
             this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.buttonBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            this.buttonBuscar.Click += new System.EventHandler(this.ConsultaFiltroGeneral);
             // 
             // buttonCancelBusqueda
             // 
@@ -333,7 +333,7 @@ namespace TPWinForm_Jannello_Vaca
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 22);
             this.label3.TabIndex = 25;
-            this.label3.Text = "DESDE";
+            this.label3.Text = "MÍNIMO";
             // 
             // label4
             // 
@@ -342,7 +342,7 @@ namespace TPWinForm_Jannello_Vaca
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 22);
             this.label4.TabIndex = 26;
-            this.label4.Text = "HASTA";
+            this.label4.Text = "MÁXIMO";
             // 
             // nudMax
             // 
@@ -361,7 +361,7 @@ namespace TPWinForm_Jannello_Vaca
             this.nudMax.Name = "nudMax";
             this.nudMax.Size = new System.Drawing.Size(128, 22);
             this.nudMax.TabIndex = 19;
-            this.nudMax.ValueChanged += new System.EventHandler(this.nudMax_ValueChanged);
+            this.nudMax.ValueChanged += new System.EventHandler(this.ConsultaFiltroGeneral);
             // 
             // nudMin
             // 
@@ -380,7 +380,7 @@ namespace TPWinForm_Jannello_Vaca
             this.nudMin.Name = "nudMin";
             this.nudMin.Size = new System.Drawing.Size(136, 22);
             this.nudMin.TabIndex = 18;
-            this.nudMin.ValueChanged += new System.EventHandler(this.nudMin_ValueChanged);
+            this.nudMin.ValueChanged += new System.EventHandler(this.ConsultaFiltroGeneral);
             // 
             // columnaRangoPrecio
             // 
