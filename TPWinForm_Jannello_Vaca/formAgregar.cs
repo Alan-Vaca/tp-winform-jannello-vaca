@@ -27,6 +27,15 @@ namespace TPWinForm_Jannello_Vaca
             List<Categoria> categorias = categoriaNegocio.listar("");
             comboBoxCategorias.DataSource = categorias;
             comboBoxMarca.DataSource = marcas;
+            agregarBtn.Enabled = false;
+        }
+
+        private void ValidarFormulario(object sender, EventArgs e)
+        {
+            if (textBoxNombre.Text != "" && textBoxDescripcion.Text != "" && textBoxCodigo.Text != "")
+            {
+                agregarBtn.Enabled = true;
+            }
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)

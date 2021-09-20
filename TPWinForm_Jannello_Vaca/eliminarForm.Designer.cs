@@ -50,31 +50,39 @@ namespace TPWinForm_Jannello_Vaca
             // textBoxID
             // 
             this.textBoxID.Location = new System.Drawing.Point(105, 118);
-            this.textBoxID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxID.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(132, 22);
             this.textBoxID.TabIndex = 1;
             // 
             // buttonAceptar
             // 
+            this.buttonAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonAceptar.FlatAppearance.BorderSize = 0;
+            this.buttonAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAceptar.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonAceptar.Location = new System.Drawing.Point(55, 190);
-            this.buttonAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(100, 28);
             this.buttonAceptar.TabIndex = 2;
             this.buttonAceptar.Text = "Aceptar";
-            this.buttonAceptar.UseVisualStyleBackColor = true;
+            this.buttonAceptar.UseVisualStyleBackColor = false;
             this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
             // buttonCancelar
             // 
+            this.buttonCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonCancelar.FlatAppearance.BorderSize = 0;
+            this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancelar.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonCancelar.Location = new System.Drawing.Point(195, 190);
-            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(100, 28);
             this.buttonCancelar.TabIndex = 3;
             this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.UseVisualStyleBackColor = false;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // eliminarForm
@@ -88,7 +96,9 @@ namespace TPWinForm_Jannello_Vaca
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.labelEliminar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(367, 312);
+            this.MinimumSize = new System.Drawing.Size(367, 312);
             this.Name = "eliminarForm";
             this.Text = "Eliminar un artículo";
             this.ResumeLayout(false);

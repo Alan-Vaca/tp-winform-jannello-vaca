@@ -51,24 +51,32 @@ namespace TPWinForm_Jannello_Vaca
             // 
             // agregarBtn
             // 
+            this.agregarBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.agregarBtn.FlatAppearance.BorderSize = 0;
+            this.agregarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.agregarBtn.ForeColor = System.Drawing.Color.Gainsboro;
             this.agregarBtn.Location = new System.Drawing.Point(149, 347);
-            this.agregarBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.agregarBtn.Margin = new System.Windows.Forms.Padding(4);
             this.agregarBtn.Name = "agregarBtn";
             this.agregarBtn.Size = new System.Drawing.Size(100, 28);
             this.agregarBtn.TabIndex = 0;
             this.agregarBtn.Text = "Agregar";
-            this.agregarBtn.UseVisualStyleBackColor = true;
+            this.agregarBtn.UseVisualStyleBackColor = false;
             this.agregarBtn.Click += new System.EventHandler(this.agregarBtn_Click);
             // 
             // CancelarBtn
             // 
+            this.CancelarBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CancelarBtn.FlatAppearance.BorderSize = 0;
+            this.CancelarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelarBtn.ForeColor = System.Drawing.Color.Gainsboro;
             this.CancelarBtn.Location = new System.Drawing.Point(333, 347);
-            this.CancelarBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CancelarBtn.Margin = new System.Windows.Forms.Padding(4);
             this.CancelarBtn.Name = "CancelarBtn";
             this.CancelarBtn.Size = new System.Drawing.Size(100, 28);
             this.CancelarBtn.TabIndex = 1;
             this.CancelarBtn.Text = "Cancelar";
-            this.CancelarBtn.UseVisualStyleBackColor = true;
+            this.CancelarBtn.UseVisualStyleBackColor = false;
             this.CancelarBtn.Click += new System.EventHandler(this.CancelarBtn_Click);
             // 
             // labelNombre
@@ -118,23 +126,25 @@ namespace TPWinForm_Jannello_Vaca
             // textBoxNombre
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(149, 42);
-            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(407, 22);
             this.textBoxNombre.TabIndex = 6;
+            this.textBoxNombre.TextChanged += new System.EventHandler(this.ValidarFormulario);
             // 
             // textBoxCodigo
             // 
             this.textBoxCodigo.Location = new System.Drawing.Point(149, 110);
-            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCodigo.Name = "textBoxCodigo";
             this.textBoxCodigo.Size = new System.Drawing.Size(99, 22);
             this.textBoxCodigo.TabIndex = 7;
+            this.textBoxCodigo.TextChanged += new System.EventHandler(this.ValidarFormulario);
             // 
             // textBoxImagen
             // 
             this.textBoxImagen.Location = new System.Drawing.Point(149, 76);
-            this.textBoxImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxImagen.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxImagen.Name = "textBoxImagen";
             this.textBoxImagen.Size = new System.Drawing.Size(407, 22);
             this.textBoxImagen.TabIndex = 8;
@@ -153,11 +163,12 @@ namespace TPWinForm_Jannello_Vaca
             // textBoxDescripcion
             // 
             this.textBoxDescripcion.Location = new System.Drawing.Point(53, 210);
-            this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDescripcion.Multiline = true;
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.Size = new System.Drawing.Size(503, 96);
             this.textBoxDescripcion.TabIndex = 11;
+            this.textBoxDescripcion.TextChanged += new System.EventHandler(this.ValidarFormulario);
             // 
             // labelMarca
             // 
@@ -186,7 +197,7 @@ namespace TPWinForm_Jannello_Vaca
             this.comboBoxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMarca.FormattingEnabled = true;
             this.comboBoxMarca.Location = new System.Drawing.Point(429, 110);
-            this.comboBoxMarca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxMarca.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxMarca.Name = "comboBoxMarca";
             this.comboBoxMarca.Size = new System.Drawing.Size(127, 24);
             this.comboBoxMarca.TabIndex = 14;
@@ -196,7 +207,7 @@ namespace TPWinForm_Jannello_Vaca
             this.comboBoxCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategorias.FormattingEnabled = true;
             this.comboBoxCategorias.Location = new System.Drawing.Point(429, 148);
-            this.comboBoxCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxCategorias.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxCategorias.Name = "comboBoxCategorias";
             this.comboBoxCategorias.Size = new System.Drawing.Size(127, 24);
             this.comboBoxCategorias.TabIndex = 15;
@@ -209,7 +220,7 @@ namespace TPWinForm_Jannello_Vaca
             0,
             0});
             this.numericUpDownPrecio.Location = new System.Drawing.Point(149, 148);
-            this.numericUpDownPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownPrecio.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -224,7 +235,7 @@ namespace TPWinForm_Jannello_Vaca
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.ClientSize = new System.Drawing.Size(616, 390);
+            this.ClientSize = new System.Drawing.Size(616, 413);
             this.Controls.Add(this.numericUpDownPrecio);
             this.Controls.Add(this.comboBoxCategorias);
             this.Controls.Add(this.comboBoxMarca);
@@ -242,7 +253,9 @@ namespace TPWinForm_Jannello_Vaca
             this.Controls.Add(this.CancelarBtn);
             this.Controls.Add(this.agregarBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(634, 455);
+            this.MinimumSize = new System.Drawing.Size(634, 455);
             this.Name = "formAgregar";
             this.Text = "Agregar un artículo";
             this.Load += new System.EventHandler(this.formAgregar_Load);

@@ -68,6 +68,7 @@ namespace TPWinForm_Jannello_Vaca
         {
             if (!Modificando)
             {
+                buttonEliminar.Visible = false;
                 buttonModificar.Text = "Guardar";
                 buttonCancelar.Visible = true;
                 comboBoxCategoria.Enabled = true;
@@ -82,6 +83,7 @@ namespace TPWinForm_Jannello_Vaca
             {
                 ArticuloNegocio negocioArt = new ArticuloNegocio();
                 Articulo art = new Articulo();
+                buttonEliminar.Visible = true;
                 buttonModificar.Text = "Modificar";
                 buttonCancelar.Visible = false;
                 buttonCancelar.Visible = false;
